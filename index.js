@@ -3,15 +3,6 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const TOKEN = process.env.TOKEN;
 const ytdl = require('ytdl-core');
-const { OpusEncoder } = require('@discordjs/opus');
-
-// Create the encoder.
-// Specify 48kHz sampling rate and 2 channel size.
-const encoder = new OpusEncoder(48000, 2);
-
-// Encode and decode.
-const encoded = encoder.encode(buffer, 48000 / 100);
-const decoded = encoder.decode(encoded, 48000 / 100);
 
 client.login(TOKEN);
 
@@ -20,39 +11,74 @@ client.on('ready', () => {
 });
 
 const queue = new Map();
+const state = {
+
+}
 
 client.on('message', msg => {
   const serverQueue = queue.get(msg.guild.id);
   if (msg.content.startsWith('!p')) {
-
-      getMusic(msg, serverQueue).then(song => {
-        // queue.songs.push(song);
-
-      })
+      getMusic(msg, serverQueue);
+  }
+  if (msg.content.startsWith('!n') || msg.content.startsWith('!next')) {
+    if (!serverQueue) {
+      msg.channel.send(`Music must be in the queue to use this command`);
+      return;
+    }
+    next(serverQueue, msg.guild);
+  }
+  if (msg.content.startsWith('!s') || msg.content.startsWith('!stop')) {
+    if (!serverQueue) {
+      msg.channel.send(`Music must be in the queue to use this command`);
+      return;
+    }
+    stop(serverQueue);
+  }
+  if (msg.content.startsWith('!l') || msg.content.startsWith('!loop')) {
+    if (!serverQueue) {
+      msg.channel.send(`Music must be in the queue to use this command`);
+      return;
+    }
+    state[msg.guild.id] = state[msg.guild.id] || {};
+    state[msg.guild.id].loop = !state[msg.guild.id].loop;
+    serverQueue.textChannel.send(`Looping is now turned ${state[msg.guild.id].loop ? 'On' : 'Off'}`);
   }
 });
 
+function next(serverQueue, guild) {
+  const { loop } = state[guild.id];
+  if (loop) {
+    serverQueue.songs.push(serverQueue.songs.shift());
+  } else {
+    serverQueue.songs.shift();
+  }
+  play(guild, serverQueue.songs[0]);
+}
+
+function stop(serverQueue) {
+  serverQueue.songs = [];
+  serverQueue.voiceChannel.leave();
+}
+
 async function getMusic(message, serverQueue) {
-  const voiceChannel = client.channels.get("712695826203410446");
+  const voiceChannel = message.member.voice.channel;
   if (!voiceChannel) return console.error("The channel does not exist!");
 
   console.log("Successfully connected.");
   const songInfo = message.content.substr(message.content.indexOf(' ')+1)
-  // msg.channel.send(song);\
   const { title, video_url: url } = await ytdl.getInfo(songInfo);
   const song = { title, url };
-  if (!serverQueue) {
+  if (!serverQueue || !client.voice.connections.has(voiceChannel.guild.id)) {
     const queueConstruct = {
       textChannel: message.channel,
       voiceChannel,
       connection: null,
       songs: [],
-      volume: 20,
+      volume: 5,
       playing: true
     }
     queue.set(message.guild.id, queueConstruct)
     queueConstruct.songs.push(song)
-    // console.log(serverQueue.songs)
     try {
       var connection = await voiceChannel.join();
       queueConstruct.connection = connection;
@@ -66,7 +92,6 @@ async function getMusic(message, serverQueue) {
     serverQueue.songs.push(song);
     return message.channel.send(`${song.title} has been added to the queue!`);
   }
-
 }
 
 function play(guild, song) {
@@ -80,8 +105,7 @@ function play(guild, song) {
   const dispatcher = serverQueue.connection
     .play(ytdl(song.url))
     .on("finish", () => {
-      serverQueue.songs.shift();
-      play(guild, serverQueue.songs[0]);
+      next();
     })
     .on("error", error => console.error(error));
   dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
