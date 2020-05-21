@@ -34,9 +34,13 @@ async function getMusic(message, serverQueue, queue, state, client) {
   const voiceChannel = message.member.voice.channel;
   if (!voiceChannel) return console.error("The channel does not exist!");
 
-  console.log("Successfully connected.");
   const songInfo = message.content.substr(message.content.indexOf(' ')+1)
-  const { title, video_url: url } = await ytdl.getInfo(songInfo);
+  let title, url;
+  try {
+    ({ title, video_url: url } = await ytdl.getInfo(songInfo));
+  } catch (e) {
+    return message.channel.send(`Error: ${e.message}`);
+  }
   const song = { title, url };
   if (!serverQueue || !client.voice.connections.has(voiceChannel.guild.id)) {
     const queueConstruct = {
@@ -50,13 +54,13 @@ async function getMusic(message, serverQueue, queue, state, client) {
     queue.set(message.guild.id, queueConstruct)
     queueConstruct.songs.push(song)
     try {
-      var connection = await voiceChannel.join();
+      const connection = await voiceChannel.join();
+      console.log("Successfully connected.");
       queueConstruct.connection = connection;
       play(message.guild, queueConstruct.songs[0], queue, state);
-    } catch (err) {
-      console.log(err);
+    } catch (e) {
       queue.delete(message.guild.id);
-      return message.channel.send(err);
+      return message.channel.send(`Error: ${e.message}`);
     }
   } else {
     serverQueue.songs.push(song);
