@@ -34,6 +34,16 @@ client.on('message', msg => {
     }
     stop(serverQueue);
   }
+  if (msg.content.startsWith('!ls') || msg.content.startsWith('!loopsong')) {
+    if (!serverQueue) {
+      msg.channel.send(`Music must be in the queue to use this command`);
+      return;
+    }
+    state[msg.guild.id] = state[msg.guild.id] || {};
+    state[msg.guild.id].loopSong = !state[msg.guild.id].loopSong;
+    serverQueue.textChannel.send(`Looping is now turned ${state[msg.guild.id].loopSong ? 'On' : 'Off'} for the current song`);
+    return;
+  }
   if (msg.content.startsWith('!l') || msg.content.startsWith('!loop')) {
     if (!serverQueue) {
       msg.channel.send(`Music must be in the queue to use this command`);
@@ -43,14 +53,25 @@ client.on('message', msg => {
     state[msg.guild.id].loop = !state[msg.guild.id].loop;
     serverQueue.textChannel.send(`Looping is now turned ${state[msg.guild.id].loop ? 'On' : 'Off'}`);
   }
+  if (msg.content.startsWith('!q') || msg.content.startsWith('!queue')) {
+    if (!serverQueue) {
+      msg.channel.send(`Music must be in the queue to use this command`);
+      return;
+    }
+    const x = serverQueue.songs.map((song, i) => `${i + 1}) ${song.title}`).join('\n')
+
+    serverQueue.textChannel.send(`| Queue: \n ${x}`);
+  }
 });
 
 function next(serverQueue, guild) {
-  const { loop } = state[guild.id];
-  if (loop) {
+  const { loop, loopSong } = (state[guild.id] || {});
+  if (loop && !loopSong) {
     serverQueue.songs.push(serverQueue.songs.shift());
   } else {
-    serverQueue.songs.shift();
+    if (!loopSong) {
+      serverQueue.songs.shift();
+    }
   }
   play(guild, serverQueue.songs[0]);
 }
@@ -105,7 +126,7 @@ function play(guild, song) {
   const dispatcher = serverQueue.connection
     .play(ytdl(song.url))
     .on("finish", () => {
-      next();
+      next(serverQueue, guild);
     })
     .on("error", error => console.error(error));
   dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
