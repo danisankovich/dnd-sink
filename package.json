@@ -1,7 +1,7 @@
 {
   "name": "DND-Bot",
-  "engines" : {
-    "node" : "^12.16.3"
+  "engines": {
+    "node": "^12.16.3"
   },
   "version": "1.0.0",
   "description": "a bot for general DND (and other TTRPG usage). Allows for music streaming in voice channels, dice rolling, and DND 5E spell lookup",

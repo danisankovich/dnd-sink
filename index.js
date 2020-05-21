@@ -5,7 +5,7 @@ res.writeHead(200, {
 });
     res.write('Hey');
     res.end();
-}).listen(process.env.PORT || 3000);
+}).listen(process.env.PORT || 3001);
 
 require('dotenv').config();
 
