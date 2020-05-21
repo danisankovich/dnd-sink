@@ -95,6 +95,6 @@ client.on('message', msg => {
     return msg.channel.send(`${findSpellByName(spellName)}`);
   }
   if (msg.content.startsWith('!help')) {
-    return msg.channel.send(`List of commands can be found here: https://github.com/mikesankovich/dnd-bot`);
+    return msg.channel.send(`List of commands can be found here: https://mikesankovich.github.io/dnd-bot/`);
   }
 });
