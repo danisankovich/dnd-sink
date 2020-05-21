@@ -1,5 +1,5 @@
 # DND-Sink
-
+[Click Here](https://discord.com/oauth2/authorize?client_id=712699373183565915&permissions=36702208&scope=bot) to add the bot to your server
 ## Music Commands
 To use these commands you must be connected to a voice channel that the bot has access to.
 
