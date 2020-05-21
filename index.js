@@ -5,7 +5,7 @@ const TOKEN = process.env.TOKEN;
 
 const { findSpellByName } = require('./utils/spell-search');
 const rollDice = require('./utils/dice-roll');
-const { next, play, getMusic, stop } = require('./utils/music-utils');
+const { next, play, getMusic, stop, remove } = require('./utils/music-utils');
 
 client.login(TOKEN);
 
@@ -62,25 +62,13 @@ client.on('message', msg => {
       return msg.channel.send(`Music must be in the queue to use this command`);
     }
     const songString = serverQueue.songs.map((song, i) => `${i + 1}) ${song.title}`).join('\n')
-
     return msg.channel.send(`\`\`\`| Queue:\n${songString}\`\`\``);
   }
   if (msg.content.startsWith('!remove')) {
     if (!serverQueue) {
       return msg.channel.send(`Music must be in the queue to use this command`);
     }
-    const removeTitle = msg.content.substr(msg.content.indexOf(' ')+1).toLowerCase();
-
-    const removeIndex = serverQueue.songs.findIndex(song => song.title.toLowerCase().indexOf(removeTitle) > -1);
-    if (removeIndex > -1) {
-      msg.channel.send(`Removed '${serverQueue.songs[removeIndex].title}' from queue`);
-      serverQueue.songs.splice(removeIndex, 1);
-      if (removeIndex === 0) {
-        return play(msg.guild, serverQueue.songs[0], queue, state);
-      }
-    } else {
-      return msg.channel.send(`Title matching '${removeTitle}' not found in queue`);
-    }
+    return remove(msg, serverQueue, queue, state)
   }
   if (msg.content.startsWith('!clear')) {
     if (!serverQueue) {

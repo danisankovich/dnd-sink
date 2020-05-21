@@ -73,4 +73,19 @@ function stop(serverQueue) {
   serverQueue.voiceChannel.leave();
 }
 
-module.exports = { next, play, stop, getMusic }
+function remove(msg, serverQueue, queue, state) {
+  const removeTitle = msg.content.substr(msg.content.indexOf(' ')+1).toLowerCase();
+
+  const removeIndex = serverQueue.songs.findIndex(song => song.title.toLowerCase().indexOf(removeTitle) > -1);
+  if (removeIndex > -1) {
+    msg.channel.send(`Removed '${serverQueue.songs[removeIndex].title}' from queue`);
+    serverQueue.songs.splice(removeIndex, 1);
+    if (removeIndex === 0) {
+      return play(msg.guild, serverQueue.songs[0], queue, state);
+    }
+  } else {
+    return msg.channel.send(`Title matching '${removeTitle}' not found in queue`);
+  }
+}
+
+module.exports = { next, play, stop, getMusic, remove }

@@ -25,7 +25,11 @@ function findSpellByName(name) {
 **Duration:** ${durationString} ${isConcentration ? '(Concentration)' : ''}
 **Components:** ${componentString}
 **Range:** ${rangeString}
-**Description:** ${found.description.replace(/<\/?p>/gm, '\n').replace(/<\/?strong>/gm, '**')}
+**Description:** ${found.description
+  .replace(/<\/?p>/gm, '\n')
+  .replace(/<\/?strong>/gm, '**')
+  .replace(/<\/?ul>/gm, '').replace(/<li>/gm, '\n - ').replace(/<\/li>/gm, '')
+}
 **Source:** ${sourceString}
 `;
 }
