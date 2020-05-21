@@ -32,7 +32,8 @@ function play(guild, song, queue, state) {
 
 async function getMusic(message, serverQueue, queue, state, client) {
   const voiceChannel = message.member.voice.channel;
-  if (!voiceChannel) return console.error("The channel does not exist!");
+  if (!voiceChannel) return message.channel.send(`You must be in a voice channel that dnd-sink can access to use this command`);
+
 
   const songInfo = message.content.substr(message.content.indexOf(' ')+1)
   let title, url;
