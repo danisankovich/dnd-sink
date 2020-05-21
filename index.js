@@ -19,7 +19,7 @@ const state = {}
 client.on('message', msg => {
   const serverQueue = queue.get(msg.guild.id);
   if (msg.content.startsWith('!play')) {
-      getMusic(msg, serverQueue, queue, state, client);
+      return getMusic(msg, serverQueue, queue, state, client);
   }
   if (msg.content.startsWith('!next')) {
     if (!serverQueue) {
@@ -27,11 +27,19 @@ client.on('message', msg => {
     }
     next(serverQueue, msg.guild, queue, state);
   }
+  if (msg.content.startsWith('!restart')) {
+    if (!serverQueue) {
+      return msg.channel.send(`Music must be in the queue to use this command`);
+    }
+    play(msg.guild, serverQueue.songs[0], queue, state);
+    return msg.channel.send(`Restarting current song`);
+  }
   if (msg.content.startsWith('!stop')) {
     if (!serverQueue) {
       return msg.channel.send(`Music must be in the queue to use this command`);
     }
     stop(serverQueue);
+    return msg.channel.send(`Stopping music stream`);
   }
   if (msg.content.startsWith('!loopsong')) {
     if (!serverQueue) {
@@ -39,7 +47,7 @@ client.on('message', msg => {
     }
     state[msg.guild.id] = state[msg.guild.id] || {};
     state[msg.guild.id].loopSong = !state[msg.guild.id].loopSong;
-    return serverQueue.textChannel.send(`Looping is now turned ${state[msg.guild.id].loopSong ? 'On' : 'Off'} for the current song`);
+    return msg.channel.send(`Looping is now turned ${state[msg.guild.id].loopSong ? 'On' : 'Off'} for the current song`);
   }
   if (msg.content.startsWith('!loop')) {
     if (!serverQueue) {
@@ -47,7 +55,7 @@ client.on('message', msg => {
     }
     state[msg.guild.id] = state[msg.guild.id] || {};
     state[msg.guild.id].loop = !state[msg.guild.id].loop;
-    return serverQueue.textChannel.send(`Looping is now turned ${state[msg.guild.id].loop ? 'On' : 'Off'}`);
+    return msg.channel.send(`Looping is now turned ${state[msg.guild.id].loop ? 'On' : 'Off'} for the queue`);
   }
   if (msg.content.startsWith('!queue')) {
     if (!serverQueue) {
@@ -55,7 +63,7 @@ client.on('message', msg => {
     }
     const songString = serverQueue.songs.map((song, i) => `${i + 1}) ${song.title}`).join('\n')
 
-    return serverQueue.textChannel.send(`\`\`\`| Queue:\n${songString}\`\`\``);
+    return msg.channel.send(`\`\`\`| Queue:\n${songString}\`\`\``);
   }
   if (msg.content.startsWith('!remove')) {
     if (!serverQueue) {
@@ -65,13 +73,13 @@ client.on('message', msg => {
 
     const removeIndex = serverQueue.songs.findIndex(song => song.title.toLowerCase().indexOf(removeTitle) > -1);
     if (removeIndex > -1) {
-      serverQueue.textChannel.send(`Removed ${serverQueue.songs[removeIndex].title} from queue`);
-        serverQueue.songs.splice(removeIndex, 1);
-        if (removeIndex === 0) {
-          return play(msg.guild, serverQueue.songs[0], queue, state);
-        }
+      msg.channel.send(`Removed '${serverQueue.songs[removeIndex].title}' from queue`);
+      serverQueue.songs.splice(removeIndex, 1);
+      if (removeIndex === 0) {
+        return play(msg.guild, serverQueue.songs[0], queue, state);
+      }
     } else {
-      return serverQueue.textChannel.send(`Title matching ${removeTitle} not found in queue`);
+      return msg.channel.send(`Title matching '${removeTitle}' not found in queue`);
     }
   }
   if (msg.content.startsWith('!clear')) {
@@ -79,6 +87,7 @@ client.on('message', msg => {
       return msg.channel.send(`Music must be in the queue to use this command`);
     }
     serverQueue.songs = [];
+    return msg.channel.send(`Queue has been cleared`);
   }
   if (msg.content.startsWith('!roll')) {
     return rollDice(msg);
