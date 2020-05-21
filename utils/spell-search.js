@@ -19,8 +19,7 @@ function findSpellByName(name) {
 
   return `
   **Name:** ${found.name} ${isRitual ? '(Ritual)' : ''}
-**Level:** ${level}
-**School:** ${spellSchool}
+**Level:** ${level} (${spellSchool})
 **Casting Time:** ${castingTimeString}
 **Duration:** ${durationString} ${isConcentration ? '(Concentration)' : ''}
 **Components:** ${componentString}
