@@ -4,6 +4,8 @@ const client = new Discord.Client();
 const TOKEN = process.env.TOKEN;
 const ytdl = require('ytdl-core');
 
+const { findSpellByName } = require('./utils/spell-search');
+
 client.login(TOKEN);
 
 client.on('ready', () => {
@@ -25,7 +27,7 @@ client.on('message', msg => {
     }
     next(serverQueue, msg.guild);
   }
-  if (msg.content.startsWith('!s') || msg.content.startsWith('!stop')) {
+  if (msg.content.startsWith('!stop')) {
     if (!serverQueue) {
       msg.channel.send(`Music must be in the queue to use this command`);
       return;
@@ -60,7 +62,7 @@ client.on('message', msg => {
 
     serverQueue.textChannel.send(`| Queue: \n ${songString}`);
   }
-  if (msg.content.startsWith('!r') || msg.content.startsWith('!remove')) {
+  if (msg.content.startsWith('!remove')) {
     if (!serverQueue) {
       msg.channel.send(`Music must be in the queue to use this command`);
       return;
@@ -85,8 +87,12 @@ client.on('message', msg => {
     }
     serverQueue.songs = [];
   }
-  if (msg.content.startsWith('/r') || msg.content.startsWith('/roll')) {
+  if (msg.content.startsWith('!roll')) {
     rollDice(msg);
+  }
+  if (msg.content.startsWith('!spell')) {
+    const spellName = msg.content.substr(msg.content.indexOf(' ')+1)
+    msg.channel.send(`${findSpellByName(spellName)}`);
   }
 });
 
@@ -165,6 +171,7 @@ function rollDice(message) {
   let value = 0;
   let sym = '+'
   const splitter = diceString.split(' ');
+  let badCharacter;
   for (let i = 0; i < splitter.length; i++) {
     if (!isNaN(splitter[i])) {
       if (sym === '+') {
@@ -177,12 +184,15 @@ function rollDice(message) {
     if (isNaN(splitter[i])) {
       if (splitter[i] === '+') {
         sym = '+';
-      }
-      if (splitter[i] === '-') {
+      } else if (splitter[i] === '-') {
         sym = '-';
-      }
-      if (splitter[i].split('d').length === 2) {
+      } else if (splitter[i].split('d').length === 2) {
         let [num, dice] = splitter[i].split(/[dD]/);
+        if (isNaN(dice)) {
+          message.reply(`Bad character found in ${diceString}`);
+          badCharacter = true;
+          break;
+        }
         if (num === '') {
           num = 1;
         }
@@ -198,8 +208,16 @@ function rollDice(message) {
           value -= result;
         }
         splitter[i] = `(${result})`
+      } else {
+        if (splitter[i] !== ' ') {
+          message.reply(`Bad character found in ${diceString}`);
+          badCharacter = true;
+          break;
+        }
       }
     }
   }
-  message.reply(`\n${diceString}\n${splitter.join(' ')} = ${value}`);
+  if (!badCharacter) {
+    message.reply(`\n${diceString}\n${splitter.join(' ')} = ${value}`);
+  }
 }

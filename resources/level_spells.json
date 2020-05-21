@@ -1,0 +1,1402 @@
+[
+  {
+  "details": null,
+  "id": 602,
+  "level": 17,
+  "origin_id": null,
+  "regularity": "at will",
+  "spell_id": 3262,
+  "spell_level": null,
+  "spell_list_id": 652,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 352,
+  "level": 1,
+  "origin_id": 72,
+  "regularity": "at will",
+  "spell_id": null,
+  "spell_level": 0,
+  "spell_list_id": 422,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 612,
+  "level": 3,
+  "origin_id": null,
+  "regularity": "at will",
+  "spell_id": 2672,
+  "spell_level": null,
+  "spell_list_id": 662,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 12,
+  "level": 1,
+  "origin_id": null,
+  "regularity": "at will",
+  "spell_id": 852,
+  "spell_level": null,
+  "spell_list_id": 312,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 872,
+  "level": 1,
+  "origin_id": null,
+  "regularity": "at will",
+  "spell_id": 3282,
+  "spell_level": null,
+  "spell_list_id": 842,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 362,
+  "level": 1,
+  "origin_id": null,
+  "regularity": "at will",
+  "spell_id": 3042,
+  "spell_level": null,
+  "spell_list_id": 442,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 622,
+  "level": 5,
+  "origin_id": null,
+  "regularity": "at will",
+  "spell_id": 3602,
+  "spell_level": null,
+  "spell_list_id": 662,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 22,
+  "level": 3,
+  "origin_id": null,
+  "regularity": "once a day",
+  "spell_id": 1252,
+  "spell_level": null,
+  "spell_list_id": 312,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 882,
+  "level": 3,
+  "origin_id": null,
+  "regularity": "once per long rest",
+  "spell_id": 2742,
+  "spell_level": 2,
+  "spell_list_id": 842,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 372,
+  "level": 1,
+  "origin_id": null,
+  "regularity": "at will",
+  "spell_id": 2022,
+  "spell_level": null,
+  "spell_list_id": 452,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 632,
+  "level": 9,
+  "origin_id": null,
+  "regularity": "at will",
+  "spell_id": 2112,
+  "spell_level": null,
+  "spell_list_id": 662,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 892,
+  "level": 5,
+  "origin_id": null,
+  "regularity": "once per long rest",
+  "spell_id": 822,
+  "spell_level": null,
+  "spell_list_id": 842,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 382,
+  "level": 1,
+  "origin_id": null,
+  "regularity": "at will",
+  "spell_id": 2022,
+  "spell_level": null,
+  "spell_list_id": 462,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 642,
+  "level": 13,
+  "origin_id": null,
+  "regularity": "at will",
+  "spell_id": 252,
+  "spell_level": null,
+  "spell_list_id": 662,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 902,
+  "level": 1,
+  "origin_id": null,
+  "regularity": "at will",
+  "spell_id": 3282,
+  "spell_level": null,
+  "spell_list_id": 852,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 392,
+  "level": 1,
+  "origin_id": null,
+  "regularity": "at will",
+  "spell_id": 2022,
+  "spell_level": null,
+  "spell_list_id": 472,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 652,
+  "level": 17,
+  "origin_id": null,
+  "regularity": "at will",
+  "spell_id": 1812,
+  "spell_level": null,
+  "spell_list_id": 662,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 912,
+  "level": 3,
+  "origin_id": null,
+  "regularity": "once per long rest",
+  "spell_id": 982,
+  "spell_level": null,
+  "spell_list_id": 852,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 402,
+  "level": 1,
+  "origin_id": null,
+  "regularity": "once per short rest",
+  "spell_id": 942,
+  "spell_level": null,
+  "spell_list_id": 482,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 662,
+  "level": 1,
+  "origin_id": 722,
+  "regularity": "at will",
+  "spell_id": null,
+  "spell_level": 1,
+  "spell_list_id": 712,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 62,
+  "level": 1,
+  "origin_id": null,
+  "regularity": "at will",
+  "spell_id": 2282,
+  "spell_level": null,
+  "spell_list_id": 342,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 922,
+  "level": 5,
+  "origin_id": null,
+  "regularity": "once per long rest",
+  "spell_id": 962,
+  "spell_level": null,
+  "spell_list_id": 852,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 412,
+  "level": 1,
+  "origin_id": null,
+  "regularity": "once per short rest",
+  "spell_id": 982,
+  "spell_level": null,
+  "spell_list_id": 482,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 672,
+  "level": 3,
+  "origin_id": null,
+  "regularity": "at will",
+  "spell_id": 862,
+  "spell_level": null,
+  "spell_list_id": 732,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 72,
+  "level": 1,
+  "origin_id": 72,
+  "regularity": "at will",
+  "spell_id": null,
+  "spell_level": 0,
+  "spell_list_id": 352,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 932,
+  "level": 1,
+  "origin_id": null,
+  "regularity": "at will",
+  "spell_id": 1502,
+  "spell_level": null,
+  "spell_list_id": 862,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 422,
+  "level": 1,
+  "origin_id": null,
+  "regularity": "once per long rest",
+  "spell_id": 1452,
+  "spell_level": null,
+  "spell_list_id": 492,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 682,
+  "level": 1,
+  "origin_id": null,
+  "regularity": "at will",
+  "spell_id": 2022,
+  "spell_level": null,
+  "spell_list_id": 752,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 82,
+  "level": 1,
+  "origin_id": null,
+  "regularity": "at will",
+  "spell_id": 3282,
+  "spell_level": null,
+  "spell_list_id": 362,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 942,
+  "level": 3,
+  "origin_id": null,
+  "regularity": "once per long rest",
+  "spell_id": 442,
+  "spell_level": 2,
+  "spell_list_id": 862,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 432,
+  "level": 3,
+  "origin_id": null,
+  "regularity": "once per long rest",
+  "spell_id": 1682,
+  "spell_level": null,
+  "spell_list_id": 492,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 692,
+  "level": 1,
+  "origin_id": null,
+  "regularity": "at will",
+  "spell_id": 2832,
+  "spell_level": null,
+  "spell_list_id": 752,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 92,
+  "level": 3,
+  "origin_id": null,
+  "regularity": "once a day",
+  "spell_id": 1772,
+  "spell_level": 2,
+  "spell_list_id": 362,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 952,
+  "level": 5,
+  "origin_id": null,
+  "regularity": "once per long rest",
+  "spell_id": 3172,
+  "spell_level": null,
+  "spell_list_id": 862,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 442,
+  "level": 5,
+  "origin_id": null,
+  "regularity": "once per long rest",
+  "spell_id": 4002,
+  "spell_level": null,
+  "spell_list_id": 492,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 102,
+  "level": 5,
+  "origin_id": null,
+  "regularity": "once a day",
+  "spell_id": 862,
+  "spell_level": null,
+  "spell_list_id": 362,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 962,
+  "level": 1,
+  "origin_id": null,
+  "regularity": "at will",
+  "spell_id": 2282,
+  "spell_level": null,
+  "spell_list_id": 872,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 452,
+  "level": 1,
+  "origin_id": null,
+  "regularity": "at will",
+  "spell_id": 2542,
+  "spell_level": null,
+  "spell_list_id": 502,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 112,
+  "level": 1,
+  "origin_id": null,
+  "regularity": "at will",
+  "spell_id": 3912,
+  "spell_level": null,
+  "spell_list_id": 372,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 972,
+  "level": 3,
+  "origin_id": null,
+  "regularity": "once per long rest",
+  "spell_id": 982,
+  "spell_level": null,
+  "spell_list_id": 872,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 1112,
+  "level": 10,
+  "origin_id": 922,
+  "regularity": "translation missing: en.enum.level_spell.regularity.consumes_spell_slot",
+  "spell_id": null,
+  "spell_level": 5,
+  "spell_list_id": 2,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 722,
+  "level": 1,
+  "origin_id": null,
+  "regularity": "at will",
+  "spell_id": 3282,
+  "spell_level": null,
+  "spell_list_id": 792,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 122,
+  "level": 3,
+  "origin_id": null,
+  "regularity": "once per long rest",
+  "spell_id": 792,
+  "spell_level": 2,
+  "spell_list_id": 372,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 982,
+  "level": 5,
+  "origin_id": null,
+  "regularity": "once per long rest",
+  "spell_id": 1942,
+  "spell_level": null,
+  "spell_list_id": 872,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 472,
+  "level": 3,
+  "origin_id": null,
+  "regularity": "once per long rest",
+  "spell_id": 3172,
+  "spell_level": null,
+  "spell_list_id": 502,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 1122,
+  "level": 10,
+  "origin_id": 922,
+  "regularity": "translation missing: en.enum.level_spell.regularity.consumes_spell_slot",
+  "spell_id": null,
+  "spell_level": 5,
+  "spell_list_id": 2,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 732,
+  "level": 3,
+  "origin_id": null,
+  "regularity": "once a day",
+  "spell_id": 1772,
+  "spell_level": 2,
+  "spell_list_id": 792,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 152,
+  "level": 1,
+  "origin_id": 22,
+  "regularity": "at will",
+  "spell_id": null,
+  "spell_level": 0,
+  "spell_list_id": 142,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 992,
+  "level": 1,
+  "origin_id": null,
+  "regularity": "at will",
+  "spell_id": 2732,
+  "spell_level": null,
+  "spell_list_id": 882,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 482,
+  "level": 5,
+  "origin_id": null,
+  "regularity": "once a day",
+  "spell_id": 862,
+  "spell_level": null,
+  "spell_list_id": 312,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 1132,
+  "level": 14,
+  "origin_id": 922,
+  "regularity": "translation missing: en.enum.level_spell.regularity.consumes_spell_slot",
+  "spell_id": null,
+  "spell_level": 7,
+  "spell_list_id": 2,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 742,
+  "level": 5,
+  "origin_id": null,
+  "regularity": "once a day",
+  "spell_id": 862,
+  "spell_level": null,
+  "spell_list_id": 792,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 162,
+  "level": 1,
+  "origin_id": null,
+  "regularity": "at will",
+  "spell_id": null,
+  "spell_level": 0,
+  "spell_list_id": 102,
+  "spell_school_id": 62
+}, {
+  "details": null,
+  "id": 1002,
+  "level": 3,
+  "origin_id": null,
+  "regularity": "once per long rest",
+  "spell_id": 152,
+  "spell_level": 2,
+  "spell_list_id": 882,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 492,
+  "level": 1,
+  "origin_id": null,
+  "regularity": "at will",
+  "spell_id": 3042,
+  "spell_level": null,
+  "spell_list_id": 552,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 1142,
+  "level": 14,
+  "origin_id": 922,
+  "regularity": "translation missing: en.enum.level_spell.regularity.consumes_spell_slot",
+  "spell_id": null,
+  "spell_level": 7,
+  "spell_list_id": 2,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 752,
+  "level": 1,
+  "origin_id": null,
+  "regularity": "at will",
+  "spell_id": 3432,
+  "spell_level": null,
+  "spell_list_id": 802,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 172,
+  "level": 1,
+  "origin_id": null,
+  "regularity": "at will",
+  "spell_id": 2022,
+  "spell_level": null,
+  "spell_list_id": 132,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 1012,
+  "level": 5,
+  "origin_id": null,
+  "regularity": "once per long rest",
+  "spell_id": 862,
+  "spell_level": null,
+  "spell_list_id": 882,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 502,
+  "level": 1,
+  "origin_id": 592,
+  "regularity": "at will",
+  "spell_id": null,
+  "spell_level": 0,
+  "spell_list_id": 582,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 1152,
+  "level": 18,
+  "origin_id": 922,
+  "regularity": "translation missing: en.enum.level_spell.regularity.consumes_spell_slot",
+  "spell_id": null,
+  "spell_level": 9,
+  "spell_list_id": 2,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 762,
+  "level": 3,
+  "origin_id": null,
+  "regularity": "once per long rest",
+  "spell_id": 442,
+  "spell_level": 2,
+  "spell_list_id": 802,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 182,
+  "level": 2,
+  "origin_id": 22,
+  "regularity": "at will",
+  "spell_id": null,
+  "spell_level": 0,
+  "spell_list_id": 182,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 1022,
+  "level": 1,
+  "origin_id": null,
+  "regularity": "at will",
+  "spell_id": 2102,
+  "spell_level": null,
+  "spell_list_id": 892,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 512,
+  "level": 3,
+  "origin_id": null,
+  "regularity": "at will",
+  "spell_id": 982,
+  "spell_level": null,
+  "spell_list_id": 642,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 1162,
+  "level": 18,
+  "origin_id": 922,
+  "regularity": "translation missing: en.enum.level_spell.regularity.consumes_spell_slot",
+  "spell_id": null,
+  "spell_level": 9,
+  "spell_list_id": 2,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 772,
+  "level": 5,
+  "origin_id": null,
+  "regularity": "once per long rest",
+  "spell_id": 1192,
+  "spell_level": null,
+  "spell_list_id": 802,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 192,
+  "level": 2,
+  "origin_id": 22,
+  "regularity": "at will",
+  "spell_id": null,
+  "spell_level": 0,
+  "spell_list_id": 192,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 1032,
+  "level": 3,
+  "origin_id": null,
+  "regularity": "once per short rest",
+  "spell_id": 3272,
+  "spell_level": null,
+  "spell_list_id": 892,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 522,
+  "level": 5,
+  "origin_id": null,
+  "regularity": "at will",
+  "spell_id": 2822,
+  "spell_level": null,
+  "spell_list_id": 642,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 1172,
+  "level": 11,
+  "origin_id": 62,
+  "regularity": "once per long rest",
+  "spell_id": null,
+  "spell_level": 6,
+  "spell_list_id": 62,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 782,
+  "level": 1,
+  "origin_id": null,
+  "regularity": "at will",
+  "spell_id": 3282,
+  "spell_level": null,
+  "spell_list_id": 812,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 202,
+  "level": 2,
+  "origin_id": 22,
+  "regularity": "at will",
+  "spell_id": null,
+  "spell_level": 0,
+  "spell_list_id": 202,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 532,
+  "level": 9,
+  "origin_id": null,
+  "regularity": "at will",
+  "spell_id": 1272,
+  "spell_level": null,
+  "spell_list_id": 642,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 1182,
+  "level": 13,
+  "origin_id": 62,
+  "regularity": "once per long rest",
+  "spell_id": null,
+  "spell_level": 7,
+  "spell_list_id": 62,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 792,
+  "level": 3,
+  "origin_id": null,
+  "regularity": "once a day",
+  "spell_id": 402,
+  "spell_level": 2,
+  "spell_list_id": 812,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 212,
+  "level": 2,
+  "origin_id": 22,
+  "regularity": "at will",
+  "spell_id": null,
+  "spell_level": 0,
+  "spell_list_id": 212,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 1052,
+  "level": 1,
+  "origin_id": null,
+  "regularity": "at will",
+  "spell_id": 2102,
+  "spell_level": null,
+  "spell_list_id": 902,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 542,
+  "level": 13,
+  "origin_id": null,
+  "regularity": "at will",
+  "spell_id": 1622,
+  "spell_level": null,
+  "spell_list_id": 642,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 1192,
+  "level": 15,
+  "origin_id": 62,
+  "regularity": "once per long rest",
+  "spell_id": null,
+  "spell_level": 8,
+  "spell_list_id": 62,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 802,
+  "level": 5,
+  "origin_id": null,
+  "regularity": "once a day",
+  "spell_id": 862,
+  "spell_level": null,
+  "spell_list_id": 812,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 222,
+  "level": 2,
+  "origin_id": 22,
+  "regularity": "at will",
+  "spell_id": null,
+  "spell_level": 0,
+  "spell_list_id": 222,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 1062,
+  "level": 3,
+  "origin_id": null,
+  "regularity": "once per long rest",
+  "spell_id": 402,
+  "spell_level": 2,
+  "spell_list_id": 902,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 552,
+  "level": 17,
+  "origin_id": null,
+  "regularity": "at will",
+  "spell_id": 2892,
+  "spell_level": null,
+  "spell_list_id": 642,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 1202,
+  "level": 17,
+  "origin_id": 62,
+  "regularity": "once per long rest",
+  "spell_id": null,
+  "spell_level": 9,
+  "spell_list_id": 62,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 1203,
+  "level": 1,
+  "origin_id": null,
+  "regularity": "once per long rest",
+  "spell_id": 942,
+  "spell_level": null,
+  "spell_list_id": 947,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 812,
+  "level": 1,
+  "origin_id": null,
+  "regularity": "at will",
+  "spell_id": 2102,
+  "spell_level": null,
+  "spell_list_id": 822,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 1204,
+  "level": 1,
+  "origin_id": null,
+  "regularity": "once per long rest",
+  "spell_id": 952,
+  "spell_level": null,
+  "spell_list_id": 947,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 1205,
+  "level": 3,
+  "origin_id": null,
+  "regularity": "once per long rest",
+  "spell_id": 1942,
+  "spell_level": null,
+  "spell_list_id": 947,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 232,
+  "level": 2,
+  "origin_id": 22,
+  "regularity": "at will",
+  "spell_id": null,
+  "spell_level": 0,
+  "spell_list_id": 232,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 1206,
+  "level": 1,
+  "origin_id": null,
+  "regularity": "once per long rest",
+  "spell_id": 1852,
+  "spell_level": null,
+  "spell_list_id": 948,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 1207,
+  "level": 3,
+  "origin_id": null,
+  "regularity": "once per long rest",
+  "spell_id": 2072,
+  "spell_level": null,
+  "spell_list_id": 948,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 1072,
+  "level": 5,
+  "origin_id": null,
+  "regularity": "once per long rest",
+  "spell_id": 1402,
+  "spell_level": null,
+  "spell_list_id": 902,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 1208,
+  "level": 1,
+  "origin_id": null,
+  "regularity": "once per long rest",
+  "spell_id": 1852,
+  "spell_level": null,
+  "spell_list_id": 949,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 1209,
+  "level": 3,
+  "origin_id": null,
+  "regularity": "once per long rest",
+  "spell_id": 2072,
+  "spell_level": null,
+  "spell_list_id": 949,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 562,
+  "level": 3,
+  "origin_id": null,
+  "regularity": "at will",
+  "spell_id": 2672,
+  "spell_level": null,
+  "spell_list_id": 652,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 1211,
+  "level": 1,
+  "origin_id": null,
+  "regularity": "once per short rest",
+  "spell_id": 3052,
+  "spell_level": null,
+  "spell_list_id": 950,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 1212,
+  "level": 1,
+  "origin_id": null,
+  "regularity": "once per long rest",
+  "spell_id": 842,
+  "spell_level": null,
+  "spell_list_id": 951,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 1213,
+  "level": 3,
+  "origin_id": null,
+  "regularity": "once per long rest",
+  "spell_id": 2002,
+  "spell_level": null,
+  "spell_list_id": 951,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 1214,
+  "level": 1,
+  "origin_id": null,
+  "regularity": "at will",
+  "spell_id": 2602,
+  "spell_level": 0,
+  "spell_list_id": 952,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 242,
+  "level": 2,
+  "origin_id": 22,
+  "regularity": "at will",
+  "spell_id": null,
+  "spell_level": 0,
+  "spell_list_id": 242,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 1215,
+  "level": 1,
+  "origin_id": null,
+  "regularity": "once per long rest",
+  "spell_id": 2692,
+  "spell_level": null,
+  "spell_list_id": 952,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 1216,
+  "level": 1,
+  "origin_id": null,
+  "regularity": "once per long rest",
+  "spell_id": 3412,
+  "spell_level": null,
+  "spell_list_id": 952,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 1082,
+  "level": 1,
+  "origin_id": null,
+  "regularity": "at will",
+  "spell_id": 3282,
+  "spell_level": null,
+  "spell_list_id": 912,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 1217,
+  "level": 1,
+  "origin_id": null,
+  "regularity": "at will",
+  "spell_id": 2242,
+  "spell_level": 0,
+  "spell_list_id": 953,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 572,
+  "level": 5,
+  "origin_id": null,
+  "regularity": "at will",
+  "spell_id": 2322,
+  "spell_level": null,
+  "spell_list_id": 652,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 1219,
+  "level": 1,
+  "origin_id": null,
+  "regularity": "once per long rest",
+  "spell_id": 2322,
+  "spell_level": null,
+  "spell_list_id": 954,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 1220,
+  "level": 1,
+  "origin_id": null,
+  "regularity": "at will",
+  "spell_id": 2252,
+  "spell_level": 0,
+  "spell_list_id": 955,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 1221,
+  "level": 1,
+  "origin_id": null,
+  "regularity": "once per short rest",
+  "spell_id": 582,
+  "spell_level": null,
+  "spell_list_id": 955,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 1222,
+  "level": 3,
+  "origin_id": null,
+  "regularity": "once per long rest",
+  "spell_id": 2142,
+  "spell_level": null,
+  "spell_list_id": 955,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 1223,
+  "level": 1,
+  "origin_id": null,
+  "regularity": "once per long rest",
+  "spell_id": 2942,
+  "spell_level": null,
+  "spell_list_id": 956,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 252,
+  "level": 2,
+  "origin_id": 22,
+  "regularity": "at will",
+  "spell_id": null,
+  "spell_level": 0,
+  "spell_list_id": 252,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 1224,
+  "level": 1,
+  "origin_id": null,
+  "regularity": "at will",
+  "spell_id": 2282,
+  "spell_level": 0,
+  "spell_list_id": 957,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 1225,
+  "level": 3,
+  "origin_id": null,
+  "regularity": "once per long rest",
+  "spell_id": 1942,
+  "spell_level": null,
+  "spell_list_id": 957,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 1092,
+  "level": 3,
+  "origin_id": null,
+  "regularity": "once per long rest",
+  "spell_id": 2872,
+  "spell_level": 2,
+  "spell_list_id": 912,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 1226,
+  "level": 1,
+  "origin_id": null,
+  "regularity": "at will",
+  "spell_id": 3772,
+  "spell_level": 0,
+  "spell_list_id": 958,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 1227,
+  "level": 3,
+  "origin_id": null,
+  "regularity": "once per long rest",
+  "spell_id": 1682,
+  "spell_level": null,
+  "spell_list_id": 958,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 582,
+  "level": 9,
+  "origin_id": null,
+  "regularity": "at will",
+  "spell_id": 1732,
+  "spell_level": null,
+  "spell_list_id": 652,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 1228,
+  "level": 1,
+  "origin_id": null,
+  "regularity": "once per long rest",
+  "spell_id": 22,
+  "spell_level": null,
+  "spell_list_id": 959,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 1229,
+  "level": 1,
+  "origin_id": null,
+  "regularity": "once per long rest",
+  "spell_id": 2092,
+  "spell_level": null,
+  "spell_list_id": 959,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 1230,
+  "level": 3,
+  "origin_id": null,
+  "regularity": "once per long rest",
+  "spell_id": 142,
+  "spell_level": null,
+  "spell_list_id": 959,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 842,
+  "level": 1,
+  "origin_id": null,
+  "regularity": "at will",
+  "spell_id": 2102,
+  "spell_level": null,
+  "spell_list_id": 832,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 332,
+  "level": 2,
+  "origin_id": null,
+  "regularity": "at will",
+  "spell_id": 2282,
+  "spell_level": null,
+  "spell_list_id": 382,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 1102,
+  "level": 5,
+  "origin_id": null,
+  "regularity": "once per long rest",
+  "spell_id": 392,
+  "spell_level": null,
+  "spell_list_id": 912,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 592,
+  "level": 13,
+  "origin_id": null,
+  "regularity": "at will",
+  "spell_id": 252,
+  "spell_level": null,
+  "spell_list_id": 652,
+  "spell_school_id": null
+}, {
+  "details": null,
+  "id": 342,
+  "level": 1,
+  "origin_id": 72,
+  "regularity": "at will",
+  "spell_id": null,
+  "spell_level": 0,
+  "spell_list_id": 422,
+  "spell_school_id": null
+}, {
+  "details": "can only target snakes",
+  "id": 462,
+  "level": 1,
+  "origin_id": null,
+  "regularity": "at will",
+  "spell_id": 3052,
+  "spell_level": null,
+  "spell_list_id": 502,
+  "spell_school_id": null
+}, {
+  "details": "doesn't require concentration",
+  "id": 1218,
+  "level": 1,
+  "origin_id": null,
+  "regularity": "once per long rest",
+  "spell_id": 2152,
+  "spell_level": null,
+  "spell_list_id": 953,
+  "spell_school_id": null
+}, {
+  "details": "only enlarge; target only yourself; requires no material components; can't cast while in direct sunlight",
+  "id": 702,
+  "level": 3,
+  "origin_id": null,
+  "regularity": "once per long rest",
+  "spell_id": 1162,
+  "spell_level": null,
+  "spell_list_id": 782,
+  "spell_school_id": null
+}, {
+  "details": "requires no material components",
+  "id": 2,
+  "level": 1,
+  "origin_id": null,
+  "regularity": "once per long rest",
+  "spell_id": 2012,
+  "spell_level": null,
+  "spell_list_id": 302,
+  "spell_school_id": null
+}, {
+  "details": "requires no material components",
+  "id": 862,
+  "level": 5,
+  "origin_id": null,
+  "regularity": "once per long rest",
+  "spell_id": 962,
+  "spell_level": null,
+  "spell_list_id": 832,
+  "spell_school_id": null
+}, {
+  "details": "requires no material components",
+  "id": 32,
+  "level": 1,
+  "origin_id": null,
+  "regularity": "once per long rest",
+  "spell_id": 2452,
+  "spell_level": null,
+  "spell_list_id": 322,
+  "spell_school_id": null
+}, {
+  "details": "requires no material components",
+  "id": 42,
+  "level": 1,
+  "origin_id": null,
+  "regularity": "at will",
+  "spell_id": 2632,
+  "spell_level": null,
+  "spell_list_id": 332,
+  "spell_school_id": null
+}, {
+  "details": "requires no material components",
+  "id": 52,
+  "level": 3,
+  "origin_id": null,
+  "regularity": "once per long rest",
+  "spell_id": 402,
+  "spell_level": 1,
+  "spell_list_id": 332,
+  "spell_school_id": null
+}, {
+  "details": "requires no material components",
+  "id": 1042,
+  "level": 5,
+  "origin_id": null,
+  "regularity": "once per long rest",
+  "spell_id": 142,
+  "spell_level": null,
+  "spell_list_id": 892,
+  "spell_school_id": null
+}, {
+  "details": "requires no material components",
+  "id": 1210,
+  "level": 1,
+  "origin_id": null,
+  "regularity": "once per short rest",
+  "spell_id": 42,
+  "spell_level": null,
+  "spell_list_id": 950,
+  "spell_school_id": null
+}, {
+  "details": "requires no material components",
+  "id": 822,
+  "level": 3,
+  "origin_id": null,
+  "regularity": "once per long rest",
+  "spell_id": 1952,
+  "spell_level": null,
+  "spell_list_id": 822,
+  "spell_school_id": null
+}, {
+  "details": "requires no material components",
+  "id": 832,
+  "level": 5,
+  "origin_id": null,
+  "regularity": "once per long rest",
+  "spell_id": 2322,
+  "spell_level": null,
+  "spell_list_id": 822,
+  "spell_school_id": null
+}, {
+  "details": "requires no material components",
+  "id": 852,
+  "level": 3,
+  "origin_id": null,
+  "regularity": "once per long rest",
+  "spell_id": 2942,
+  "spell_level": null,
+  "spell_list_id": 832,
+  "spell_school_id": null
+}, {
+  "details": "target only yourself; requires no material components; can't cast while in direct sunlight",
+  "id": 712,
+  "level": 5,
+  "origin_id": null,
+  "regularity": "once per long rest",
+  "spell_id": 1942,
+  "spell_level": null,
+  "spell_list_id": 782,
+  "spell_school_id": null
+}]

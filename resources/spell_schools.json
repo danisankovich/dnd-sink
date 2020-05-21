@@ -1,0 +1,25 @@
+[{
+  "id": 2,
+  "name": "abjuration"
+}, {
+  "id": 12,
+  "name": "conjuration"
+}, {
+  "id": 22,
+  "name": "divination"
+}, {
+  "id": 32,
+  "name": "enchantment"
+}, {
+  "id": 42,
+  "name": "evocation"
+}, {
+  "id": 52,
+  "name": "illusion"
+}, {
+  "id": 62,
+  "name": "necromancy"
+}, {
+  "id": 72,
+  "name": "transmutation"
+}]

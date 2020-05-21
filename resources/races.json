@@ -1,0 +1,1496 @@
+[
+  {
+  "abilities_rels": [{
+    "ability_id": 22,
+    "modifier": 2
+  }, {
+    "ability_id": 52,
+    "modifier": 1
+  }],
+  "id": 2,
+  "name": "aarakocra",
+  "slug": "aarakocra",
+  "sources_rels": [{
+    "page": 3,
+    "source_id": 2
+  }],
+  "spell_list_id": null,
+  "spellcasting_ability_id": null,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 12,
+    "modifier": 2
+  }, {
+    "ability_id": 22,
+    "modifier": 1
+  }],
+  "id": 12,
+  "name": "air genasi",
+  "slug": "air-genasi",
+  "sources_rels": [{
+    "page": 9,
+    "source_id": 2
+  }],
+  "spell_list_id": 302,
+  "spellcasting_ability_id": 12,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 12,
+    "modifier": 2
+  }, {
+    "ability_id": 42,
+    "modifier": 1
+  }],
+  "id": 596,
+  "name": "beasthide shifter",
+  "slug": "beasthide-shifter",
+  "sources_rels": [{
+    "page": 34,
+    "source_id": 83
+  }],
+  "spell_list_id": null,
+  "spellcasting_ability_id": null,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 22,
+    "modifier": 1
+  }, {
+    "ability_id": 42,
+    "modifier": 2
+  }],
+  "id": 292,
+  "name": "bugbear",
+  "slug": "bugbear",
+  "sources_rels": [{
+    "page": 119,
+    "source_id": 42
+  }, {
+    "page": 25,
+    "source_id": 83
+  }],
+  "spell_list_id": null,
+  "spellcasting_ability_id": null,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 42,
+    "modifier": 2
+  }, {
+    "ability_id": 52,
+    "modifier": 1
+  }],
+  "id": 552,
+  "name": "centaur",
+  "slug": "centaur",
+  "sources_rels": [{
+    "page": 15,
+    "source_id": 82
+  }],
+  "spell_list_id": null,
+  "spellcasting_ability_id": null,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": null,
+    "modifier": 1
+  }, {
+    "ability_id": 2,
+    "modifier": 2
+  }],
+  "id": 593,
+  "name": "changeling",
+  "slug": "changeling",
+  "sources_rels": [{
+    "page": 17,
+    "source_id": 83
+  }],
+  "spell_list_id": null,
+  "spellcasting_ability_id": null,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 2,
+    "modifier": 1
+  }, {
+    "ability_id": 22,
+    "modifier": 2
+  }],
+  "id": 22,
+  "name": "dark elf (drow)",
+  "slug": "dark-elf-drow",
+  "sources_rels": [{
+    "page": 24,
+    "source_id": 12
+  }],
+  "spell_list_id": 312,
+  "spellcasting_ability_id": 2,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 22,
+    "modifier": 1
+  }, {
+    "ability_id": 32,
+    "modifier": 2
+  }],
+  "id": 32,
+  "name": "deep gnome",
+  "slug": "deep-gnome",
+  "sources_rels": [{
+    "page": 5,
+    "source_id": 2
+  }, {
+    "page": 113,
+    "source_id": 72
+  }],
+  "spell_list_id": null,
+  "spellcasting_ability_id": null,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 2,
+    "modifier": 2
+  }, {
+    "ability_id": 32,
+    "modifier": 1
+  }],
+  "id": 392,
+  "name": "devil's tongue tiefling",
+  "slug": "devil-s-tongue-tiefling",
+  "sources_rels": [{
+    "page": 118,
+    "source_id": 22
+  }],
+  "spell_list_id": 802,
+  "spellcasting_ability_id": 2,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 2,
+    "modifier": 1
+  }, {
+    "ability_id": 42,
+    "modifier": 2
+  }],
+  "id": 42,
+  "name": "dragonborn",
+  "slug": "dragonborn",
+  "sources_rels": [{
+    "page": 32,
+    "source_id": 12
+  }],
+  "spell_list_id": null,
+  "spellcasting_ability_id": null,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 12,
+    "modifier": 2
+  }, {
+    "ability_id": 42,
+    "modifier": 1
+  }],
+  "id": 362,
+  "name": "duergar",
+  "slug": "duergar",
+  "sources_rels": [{
+    "page": 104,
+    "source_id": 22
+  }, {
+    "page": 81,
+    "source_id": 72
+  }],
+  "spell_list_id": 782,
+  "spellcasting_ability_id": 32,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 12,
+    "modifier": 2
+  }, {
+    "ability_id": 42,
+    "modifier": 1
+  }],
+  "id": 52,
+  "name": "earth genasi",
+  "slug": "earth-genasi",
+  "sources_rels": [{
+    "page": 9,
+    "source_id": 2
+  }],
+  "spell_list_id": 322,
+  "spellcasting_ability_id": 12,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 2,
+    "modifier": 1
+  }, {
+    "ability_id": 22,
+    "modifier": 2
+  }],
+  "id": 422,
+  "name": "eladrin",
+  "slug": "eladrin",
+  "sources_rels": [{
+    "page": 62,
+    "source_id": 72
+  }],
+  "spell_list_id": null,
+  "spellcasting_ability_id": null,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 2,
+    "modifier": 2
+  }, {
+    "ability_id": 42,
+    "modifier": 1
+  }],
+  "id": 212,
+  "name": "fallen aasimar",
+  "slug": "fallen-aasimar",
+  "sources_rels": [{
+    "page": 105,
+    "source_id": 42
+  }],
+  "spell_list_id": 452,
+  "spellcasting_ability_id": 2,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 22,
+    "modifier": 2
+  }, {
+    "ability_id": 32,
+    "modifier": 1
+  }],
+  "id": 382,
+  "name": "feral tiefling",
+  "slug": "feral-tiefling",
+  "sources_rels": [{
+    "page": 118,
+    "source_id": 22
+  }],
+  "spell_list_id": 792,
+  "spellcasting_ability_id": 2,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 42,
+    "modifier": 1
+  }, {
+    "ability_id": 52,
+    "modifier": 2
+  }],
+  "id": 242,
+  "name": "firbolg",
+  "slug": "firbolg",
+  "sources_rels": [{
+    "page": 106,
+    "source_id": 42
+  }],
+  "spell_list_id": 482,
+  "spellcasting_ability_id": 52,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 12,
+    "modifier": 2
+  }, {
+    "ability_id": 32,
+    "modifier": 1
+  }],
+  "id": 62,
+  "name": "fire genasi",
+  "slug": "fire-genasi",
+  "sources_rels": [{
+    "page": 9,
+    "source_id": 2
+  }],
+  "spell_list_id": 332,
+  "spellcasting_ability_id": 12,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 22,
+    "modifier": 1
+  }, {
+    "ability_id": 32,
+    "modifier": 2
+  }],
+  "id": 72,
+  "name": "forest gnome",
+  "slug": "forest-gnome",
+  "sources_rels": [{
+    "page": 37,
+    "source_id": 12
+  }],
+  "spell_list_id": 342,
+  "spellcasting_ability_id": 32,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 22,
+    "modifier": 2
+  }, {
+    "ability_id": 52,
+    "modifier": 1
+  }],
+  "id": 372,
+  "name": "ghostwise halfling",
+  "slug": "ghostwise-halfling",
+  "sources_rels": [{
+    "page": 104,
+    "source_id": 22
+  }],
+  "spell_list_id": null,
+  "spellcasting_ability_id": null,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 32,
+    "modifier": 1
+  }, {
+    "ability_id": 42,
+    "modifier": 2
+  }],
+  "id": 432,
+  "name": "githyanki",
+  "slug": "githyanki",
+  "sources_rels": [{
+    "page": 96,
+    "source_id": 72
+  }],
+  "spell_list_id": 822,
+  "spellcasting_ability_id": 32,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 32,
+    "modifier": 1
+  }, {
+    "ability_id": 52,
+    "modifier": 2
+  }],
+  "id": 442,
+  "name": "githzerai",
+  "slug": "githzerai",
+  "sources_rels": [{
+    "page": 96,
+    "source_id": 72
+  }],
+  "spell_list_id": 832,
+  "spellcasting_ability_id": 52,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 12,
+    "modifier": 1
+  }, {
+    "ability_id": 22,
+    "modifier": 2
+  }],
+  "id": 302,
+  "name": "goblin",
+  "slug": "goblin",
+  "sources_rels": [{
+    "page": 119,
+    "source_id": 42
+  }, {
+    "page": 26,
+    "source_id": 83
+  }],
+  "spell_list_id": null,
+  "spellcasting_ability_id": null,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 12,
+    "modifier": 1
+  }, {
+    "ability_id": 42,
+    "modifier": 2
+  }],
+  "id": 82,
+  "name": "goliath",
+  "slug": "goliath",
+  "sources_rels": [{
+    "page": 10,
+    "source_id": 2
+  }, {
+    "page": 108,
+    "source_id": 42
+  }],
+  "spell_list_id": null,
+  "spellcasting_ability_id": null,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": null,
+    "modifier": 1
+  }, {
+    "ability_id": null,
+    "modifier": 1
+  }, {
+    "ability_id": 2,
+    "modifier": 2
+  }],
+  "id": 92,
+  "name": "half-elf",
+  "slug": "half-elf",
+  "sources_rels": [{
+    "page": 38,
+    "source_id": 12
+  }],
+  "spell_list_id": null,
+  "spellcasting_ability_id": null,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 12,
+    "modifier": 1
+  }, {
+    "ability_id": 42,
+    "modifier": 2
+  }],
+  "id": 102,
+  "name": "half-orc",
+  "slug": "half-orc",
+  "sources_rels": [{
+    "page": 40,
+    "source_id": 12
+  }],
+  "spell_list_id": null,
+  "spellcasting_ability_id": null,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 2,
+    "modifier": 2
+  }, {
+    "ability_id": 32,
+    "modifier": 1
+  }],
+  "id": 402,
+  "name": "hellfire tiefling",
+  "slug": "hellfire-tiefling",
+  "sources_rels": [{
+    "page": 118,
+    "source_id": 22
+  }],
+  "spell_list_id": 812,
+  "spellcasting_ability_id": 2,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 22,
+    "modifier": 2
+  }, {
+    "ability_id": 32,
+    "modifier": 1
+  }],
+  "id": 112,
+  "name": "high elf",
+  "slug": "high-elf",
+  "sources_rels": [{
+    "page": 23,
+    "source_id": 12
+  }],
+  "spell_list_id": 352,
+  "spellcasting_ability_id": 32,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 12,
+    "modifier": 2
+  }, {
+    "ability_id": 52,
+    "modifier": 1
+  }],
+  "id": 122,
+  "name": "hill dwarf",
+  "slug": "hill-dwarf",
+  "sources_rels": [{
+    "page": 20,
+    "source_id": 12
+  }],
+  "spell_list_id": null,
+  "spellcasting_ability_id": null,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 12,
+    "modifier": 2
+  }, {
+    "ability_id": 32,
+    "modifier": 1
+  }],
+  "id": 312,
+  "name": "hobgoblin",
+  "slug": "hobgoblin",
+  "sources_rels": [{
+    "page": 119,
+    "source_id": 42
+  }, {
+    "page": 27,
+    "source_id": 83
+  }],
+  "spell_list_id": null,
+  "spellcasting_ability_id": null,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 2,
+    "modifier": 1
+  }, {
+    "ability_id": 12,
+    "modifier": 1
+  }, {
+    "ability_id": 22,
+    "modifier": 1
+  }, {
+    "ability_id": 32,
+    "modifier": 1
+  }, {
+    "ability_id": 42,
+    "modifier": 1
+  }, {
+    "ability_id": 52,
+    "modifier": 1
+  }],
+  "id": 132,
+  "name": "human",
+  "slug": "human",
+  "sources_rels": [{
+    "page": 29,
+    "source_id": 12
+  }],
+  "spell_list_id": null,
+  "spellcasting_ability_id": null,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 2,
+    "modifier": 1
+  }, {
+    "ability_id": 52,
+    "modifier": 2
+  }],
+  "id": 594,
+  "name": "kalashtar",
+  "slug": "kalashtar",
+  "sources_rels": [{
+    "page": 29,
+    "source_id": 83
+  }],
+  "spell_list_id": null,
+  "spellcasting_ability_id": null,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 22,
+    "modifier": 2
+  }, {
+    "ability_id": 52,
+    "modifier": 1
+  }],
+  "id": 252,
+  "name": "kenku",
+  "slug": "kenku",
+  "sources_rels": [{
+    "page": 109,
+    "source_id": 42
+  }],
+  "spell_list_id": null,
+  "spellcasting_ability_id": null,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 22,
+    "modifier": 2
+  }, {
+    "ability_id": 42,
+    "modifier": -2
+  }],
+  "id": 322,
+  "name": "kobold",
+  "slug": "kobold",
+  "sources_rels": [{
+    "page": 119,
+    "source_id": 42
+  }],
+  "spell_list_id": null,
+  "spellcasting_ability_id": null,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 2,
+    "modifier": 1
+  }, {
+    "ability_id": 22,
+    "modifier": 2
+  }],
+  "id": 142,
+  "name": "lightfoot halfling",
+  "slug": "lightfoot-halfling",
+  "sources_rels": [{
+    "page": 28,
+    "source_id": 12
+  }],
+  "spell_list_id": null,
+  "spellcasting_ability_id": null,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 12,
+    "modifier": 2
+  }, {
+    "ability_id": 52,
+    "modifier": 1
+  }],
+  "id": 262,
+  "name": "lizardfolk",
+  "slug": "lizardfolk",
+  "sources_rels": [{
+    "page": 111,
+    "source_id": 42
+  }],
+  "spell_list_id": null,
+  "spellcasting_ability_id": null,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 22,
+    "modifier": 1
+  }, {
+    "ability_id": 42,
+    "modifier": 2
+  }],
+  "id": 597,
+  "name": "longtooth shifter",
+  "slug": "longtooth-shifter",
+  "sources_rels": [{
+    "page": 34,
+    "source_id": 83
+  }],
+  "spell_list_id": null,
+  "spellcasting_ability_id": null,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 12,
+    "modifier": 2
+  }, {
+    "ability_id": 52,
+    "modifier": 1
+  }],
+  "id": 562,
+  "name": "loxodon",
+  "slug": "loxodon",
+  "sources_rels": [{
+    "page": 17,
+    "source_id": 82
+  }],
+  "spell_list_id": null,
+  "spellcasting_ability_id": null,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": null,
+    "modifier": 1
+  }, {
+    "ability_id": 52,
+    "modifier": 2
+  }],
+  "id": 601,
+  "name": "mark of detection half-elf",
+  "slug": "mark-of-detection-half-elf",
+  "sources_rels": [{
+    "page": 40,
+    "source_id": 83
+  }],
+  "spell_list_id": 947,
+  "spellcasting_ability_id": 32,
+  "spells_ids": [932, 952, 962, 1342, 492, 2402, 122, 1032, 1972]
+}, {
+  "abilities_rels": [{
+    "ability_id": 12,
+    "modifier": 1
+  }, {
+    "ability_id": 52,
+    "modifier": 2
+  }],
+  "id": 602,
+  "name": "mark of finding half-orc",
+  "slug": "mark-of-finding-half-orc",
+  "sources_rels": [{
+    "page": 41,
+    "source_id": 83
+  }],
+  "spell_list_id": 948,
+  "spellcasting_ability_id": 52,
+  "spells_ids": [1252, 2082, 2052, 2072, 492, 3072, 1032, 2062, 562]
+}, {
+  "abilities_rels": [{
+    "ability_id": 12,
+    "modifier": 1
+  }, {
+    "ability_id": 52,
+    "modifier": 2
+  }],
+  "id": 603,
+  "name": "mark of finding human",
+  "slug": "mark-of-finding-human",
+  "sources_rels": [{
+    "page": 41,
+    "source_id": 83
+  }],
+  "spell_list_id": 949,
+  "spellcasting_ability_id": 52,
+  "spells_ids": [1252, 2082, 2052, 2072, 492, 3072, 1032, 2062, 562]
+}, {
+  "abilities_rels": [{
+    "ability_id": null,
+    "modifier": 1
+  }, {
+    "ability_id": 52,
+    "modifier": 2
+  }],
+  "id": 604,
+  "name": "mark of handling human",
+  "slug": "mark-of-handling-human",
+  "sources_rels": [{
+    "page": 42,
+    "source_id": 83
+  }],
+  "spell_list_id": 950,
+  "spellcasting_ability_id": 52,
+  "spells_ids": [42, 3052, 282, 422, 272, 622, 192, 1062, 222]
+}, {
+  "abilities_rels": [{
+    "ability_id": 22,
+    "modifier": 2
+  }, {
+    "ability_id": 52,
+    "modifier": 1
+  }],
+  "id": 605,
+  "name": "mark of healing halfling",
+  "slug": "mark-of-healing-halfling",
+  "sources_rels": [{
+    "page": 43,
+    "source_id": 83
+  }],
+  "spell_list_id": 951,
+  "spellcasting_ability_id": 52,
+  "spells_ids": [842, 1752, 2002, 2592, 212, 2192, 202, 192, 1632]
+}, {
+  "abilities_rels": [{
+    "ability_id": 2,
+    "modifier": 1
+  }, {
+    "ability_id": 22,
+    "modifier": 2
+  }],
+  "id": 606,
+  "name": "mark of hospitality halfling",
+  "slug": "mark-of-hospitality-halfling",
+  "sources_rels": [{
+    "page": 44,
+    "source_id": 83
+  }],
+  "spell_list_id": 952,
+  "spellcasting_ability_id": 2,
+  "spells_ids": [1592, 3012, 12, 422, 782, 1992, 202, 2372, 1702]
+}, {
+  "abilities_rels": [{
+    "ability_id": null,
+    "modifier": 1
+  }, {
+    "ability_id": 32,
+    "modifier": 2
+  }],
+  "id": 607,
+  "name": "mark of making human",
+  "slug": "mark-of-making-human",
+  "sources_rels": [{
+    "page": 45,
+    "source_id": 83
+  }],
+  "spell_list_id": 953,
+  "spellcasting_ability_id": 32,
+  "spells_ids": [1882, 3272, 732, 2152, 632, 1142, 1242, 3142, 812]
+}, {
+  "abilities_rels": [{
+    "ability_id": null,
+    "modifier": 1
+  }, {
+    "ability_id": 22,
+    "modifier": 2
+  }],
+  "id": 608,
+  "name": "mark of passage human",
+  "slug": "mark-of-passage-human",
+  "sources_rels": [{
+    "page": 46,
+    "source_id": 83
+  }],
+  "spell_list_id": 954,
+  "spellcasting_ability_id": 22,
+  "spells_ids": [1222, 1952, 2322, 2452, 372, 2492, 972, 1492, 3262]
+}, {
+  "abilities_rels": [{
+    "ability_id": 2,
+    "modifier": 1
+  }, {
+    "ability_id": 32,
+    "modifier": 2
+  }],
+  "id": 609,
+  "name": "mark of scribing gnome",
+  "slug": "mark-of-scribing-gnome",
+  "sources_rels": [{
+    "page": 47,
+    "source_id": 83
+  }],
+  "spell_list_id": 955,
+  "spellcasting_ability_id": 32,
+  "spells_ids": [582, 1892, 52, 2982, 2902, 3332, 122, 612, 1102]
+}, {
+  "abilities_rels": [{
+    "ability_id": 12,
+    "modifier": 2
+  }, {
+    "ability_id": 52,
+    "modifier": 1
+  }],
+  "id": 610,
+  "name": "mark of sentinel human",
+  "slug": "mark-of-sentinel-human",
+  "sources_rels": [{
+    "page": 48,
+    "source_id": 83
+  }],
+  "spell_list_id": 956,
+  "spellcasting_ability_id": 52,
+  "spells_ids": [302, 572, 772, 892, 1642, 2662, 2952, 3492, 3602]
+}, {
+  "abilities_rels": [{
+    "ability_id": 2,
+    "modifier": 1
+  }, {
+    "ability_id": 22,
+    "modifier": 2
+  }],
+  "id": 611,
+  "name": "mark of shadow elf",
+  "slug": "mark-of-shadow-elf",
+  "sources_rels": [{
+    "page": 49,
+    "source_id": 83
+  }],
+  "spell_list_id": 957,
+  "spellcasting_ability_id": 2,
+  "spells_ids": [982, 2992, 862, 2452, 492, 2162, 1622, 1712, 2312]
+}, {
+  "abilities_rels": [{
+    "ability_id": 2,
+    "modifier": 2
+  }, {
+    "ability_id": 22,
+    "modifier": 1
+  }],
+  "id": 612,
+  "name": "mark of storm half-elf",
+  "slug": "mark-of-storm-half-elf",
+  "sources_rels": [{
+    "page": 50,
+    "source_id": 83
+  }],
+  "spell_list_id": 958,
+  "spellcasting_ability_id": 2,
+  "spells_ids": [1282, 1452, 1682, 2012, 3022, 3552, 672, 742, 652]
+}, {
+  "abilities_rels": [{
+    "ability_id": 12,
+    "modifier": 2
+  }, {
+    "ability_id": 32,
+    "modifier": 1
+  }],
+  "id": 613,
+  "name": "mark of warding dwarf",
+  "slug": "mark-of-warding-dwarf",
+  "sources_rels": [{
+    "page": 50,
+    "source_id": 83
+  }],
+  "spell_list_id": 959,
+  "spellcasting_ability_id": 32,
+  "spells_ids": [22, 152, 142, 1962, 1582, 2112, 1982, 2352, 92]
+}, {
+  "abilities_rels": [{
+    "ability_id": 12,
+    "modifier": 1
+  }, {
+    "ability_id": 42,
+    "modifier": 2
+  }],
+  "id": 572,
+  "name": "minotaur",
+  "slug": "minotaur",
+  "sources_rels": [{
+    "page": 18,
+    "source_id": 82
+  }],
+  "spell_list_id": null,
+  "spellcasting_ability_id": null,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 12,
+    "modifier": 2
+  }, {
+    "ability_id": 42,
+    "modifier": 2
+  }],
+  "id": 152,
+  "name": "mountain dwarf",
+  "slug": "mountain-dwarf",
+  "sources_rels": [{
+    "page": 20,
+    "source_id": 12
+  }],
+  "spell_list_id": null,
+  "spellcasting_ability_id": null,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 12,
+    "modifier": 1
+  }, {
+    "ability_id": 42,
+    "modifier": 2
+  }],
+  "id": 332,
+  "name": "orc",
+  "slug": "orc",
+  "sources_rels": [{
+    "page": 120,
+    "source_id": 42
+  }],
+  "spell_list_id": null,
+  "spellcasting_ability_id": null,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 12,
+    "modifier": 1
+  }, {
+    "ability_id": 42,
+    "modifier": 2
+  }],
+  "id": 595,
+  "name": "orc of eberron",
+  "slug": "orc-of-eberron",
+  "sources_rels": [{
+    "page": 31,
+    "source_id": 83
+  }],
+  "spell_list_id": null,
+  "spellcasting_ability_id": null,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 2,
+    "modifier": 2
+  }, {
+    "ability_id": 52,
+    "modifier": 1
+  }],
+  "id": 222,
+  "name": "protector aasimar",
+  "slug": "protector-aasimar",
+  "sources_rels": [{
+    "page": 105,
+    "source_id": 42
+  }],
+  "spell_list_id": 462,
+  "spellcasting_ability_id": 2,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 12,
+    "modifier": 1
+  }, {
+    "ability_id": 32,
+    "modifier": 2
+  }],
+  "id": 202,
+  "name": "rock gnome",
+  "slug": "rock-gnome",
+  "sources_rels": [{
+    "page": 37,
+    "source_id": 12
+  }],
+  "spell_list_id": null,
+  "spellcasting_ability_id": null,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 2,
+    "modifier": 2
+  }, {
+    "ability_id": 12,
+    "modifier": 1
+  }],
+  "id": 232,
+  "name": "scourge aasimar",
+  "slug": "scourge-aasimar",
+  "sources_rels": [{
+    "page": 105,
+    "source_id": 42
+  }],
+  "spell_list_id": 472,
+  "spellcasting_ability_id": 2,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 12,
+    "modifier": 1
+  }, {
+    "ability_id": 22,
+    "modifier": 2
+  }],
+  "id": 452,
+  "name": "sea elf",
+  "slug": "sea-elf",
+  "sources_rels": [{
+    "page": 62,
+    "source_id": 72
+  }],
+  "spell_list_id": null,
+  "spellcasting_ability_id": null,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 12,
+    "modifier": 1
+  }, {
+    "ability_id": 22,
+    "modifier": 2
+  }],
+  "id": 462,
+  "name": "shadar-kai",
+  "slug": "shadar-kai",
+  "sources_rels": [{
+    "page": 62,
+    "source_id": 72
+  }],
+  "spell_list_id": null,
+  "spellcasting_ability_id": null,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": null,
+    "modifier": 1
+  }, {
+    "ability_id": 12,
+    "modifier": 2
+  }],
+  "id": 582,
+  "name": "simic hybrid",
+  "slug": "simic-hybrid",
+  "sources_rels": [{
+    "page": 20,
+    "source_id": 82
+  }],
+  "spell_list_id": null,
+  "spellcasting_ability_id": null,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 12,
+    "modifier": 1
+  }, {
+    "ability_id": 22,
+    "modifier": 2
+  }],
+  "id": 162,
+  "name": "stout halfling",
+  "slug": "stout-halfling",
+  "sources_rels": [{
+    "page": 28,
+    "source_id": 12
+  }],
+  "spell_list_id": null,
+  "spellcasting_ability_id": null,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 2,
+    "modifier": 1
+  }, {
+    "ability_id": 22,
+    "modifier": 2
+  }],
+  "id": 598,
+  "name": "swiftstride shifter",
+  "slug": "swiftstride-shifter",
+  "sources_rels": [{
+    "page": 34,
+    "source_id": 83
+  }],
+  "spell_list_id": null,
+  "spellcasting_ability_id": null,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 2,
+    "modifier": 1
+  }, {
+    "ability_id": 22,
+    "modifier": 2
+  }],
+  "id": 272,
+  "name": "tabaxi",
+  "slug": "tabaxi",
+  "sources_rels": [{
+    "page": 113,
+    "source_id": 42
+  }],
+  "spell_list_id": null,
+  "spellcasting_ability_id": null,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 2,
+    "modifier": 2
+  }, {
+    "ability_id": 32,
+    "modifier": 1
+  }],
+  "id": 172,
+  "name": "tiefling",
+  "slug": "tiefling",
+  "sources_rels": [{
+    "page": 42,
+    "source_id": 12
+  }],
+  "spell_list_id": 362,
+  "spellcasting_ability_id": 2,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 2,
+    "modifier": 2
+  }, {
+    "ability_id": 32,
+    "modifier": 1
+  }],
+  "id": 472,
+  "name": "tiefling (baalzebul)",
+  "slug": "tiefling-baalzebul",
+  "sources_rels": [{
+    "page": 21,
+    "source_id": 72
+  }],
+  "spell_list_id": 842,
+  "spellcasting_ability_id": 2,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 2,
+    "modifier": 2
+  }, {
+    "ability_id": 22,
+    "modifier": 1
+  }],
+  "id": 482,
+  "name": "tiefling (dispater)",
+  "slug": "tiefling-dispater",
+  "sources_rels": [{
+    "page": 21,
+    "source_id": 72
+  }],
+  "spell_list_id": 852,
+  "spellcasting_ability_id": 2,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 2,
+    "modifier": 2
+  }, {
+    "ability_id": 52,
+    "modifier": 1
+  }],
+  "id": 492,
+  "name": "tiefling (fierna)",
+  "slug": "tiefling-fierna",
+  "sources_rels": [{
+    "page": 21,
+    "source_id": 72
+  }],
+  "spell_list_id": 862,
+  "spellcasting_ability_id": 2,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 2,
+    "modifier": 2
+  }, {
+    "ability_id": 22,
+    "modifier": 1
+  }],
+  "id": 502,
+  "name": "tiefling (glasya)",
+  "slug": "tiefling-glasya",
+  "sources_rels": [{
+    "page": 22,
+    "source_id": 72
+  }],
+  "spell_list_id": 872,
+  "spellcasting_ability_id": 2,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 2,
+    "modifier": 2
+  }, {
+    "ability_id": 12,
+    "modifier": 1
+  }],
+  "id": 512,
+  "name": "tiefling (levistus)",
+  "slug": "tiefling-levistus",
+  "sources_rels": [{
+    "page": 22,
+    "source_id": 72
+  }],
+  "spell_list_id": 882,
+  "spellcasting_ability_id": 2,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 2,
+    "modifier": 2
+  }, {
+    "ability_id": 32,
+    "modifier": 1
+  }],
+  "id": 522,
+  "name": "tiefling (mammon)",
+  "slug": "tiefling-mammon",
+  "sources_rels": [{
+    "page": 22,
+    "source_id": 72
+  }],
+  "spell_list_id": 892,
+  "spellcasting_ability_id": 2,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 2,
+    "modifier": 2
+  }, {
+    "ability_id": 32,
+    "modifier": 1
+  }],
+  "id": 532,
+  "name": "tiefling (mephistopheles)",
+  "slug": "tiefling-mephistopheles",
+  "sources_rels": [{
+    "page": 23,
+    "source_id": 72
+  }],
+  "spell_list_id": 902,
+  "spellcasting_ability_id": 2,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 2,
+    "modifier": 2
+  }, {
+    "ability_id": 42,
+    "modifier": 1
+  }],
+  "id": 542,
+  "name": "tiefling (zariel)",
+  "slug": "tiefling-zariel",
+  "sources_rels": [{
+    "page": 23,
+    "source_id": 72
+  }],
+  "spell_list_id": 912,
+  "spellcasting_ability_id": 2,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 42,
+    "modifier": 2
+  }, {
+    "ability_id": 52,
+    "modifier": 1
+  }],
+  "id": 352,
+  "name": "tortle",
+  "slug": "tortle",
+  "sources_rels": [{
+    "page": 4,
+    "source_id": 62
+  }],
+  "spell_list_id": null,
+  "spellcasting_ability_id": null,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 2,
+    "modifier": 1
+  }, {
+    "ability_id": 12,
+    "modifier": 1
+  }, {
+    "ability_id": 42,
+    "modifier": 1
+  }],
+  "id": 282,
+  "name": "triton",
+  "slug": "triton",
+  "sources_rels": [{
+    "page": 115,
+    "source_id": 42
+  }],
+  "spell_list_id": 492,
+  "spellcasting_ability_id": 2,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 32,
+    "modifier": 2
+  }, {
+    "ability_id": 52,
+    "modifier": 1
+  }],
+  "id": 592,
+  "name": "vedalken",
+  "slug": "vedalken",
+  "sources_rels": [{
+    "page": 21,
+    "source_id": 82
+  }],
+  "spell_list_id": null,
+  "spellcasting_ability_id": null,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": null,
+    "modifier": 1
+  }, {
+    "ability_id": 12,
+    "modifier": 2
+  }],
+  "id": 600,
+  "name": "warforged",
+  "slug": "warforged",
+  "sources_rels": [{
+    "page": 35,
+    "source_id": 83
+  }],
+  "spell_list_id": null,
+  "spellcasting_ability_id": null,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 12,
+    "modifier": 2
+  }, {
+    "ability_id": 52,
+    "modifier": 1
+  }],
+  "id": 182,
+  "name": "water genasi",
+  "slug": "water-genasi",
+  "sources_rels": [{
+    "page": 10,
+    "source_id": 2
+  }],
+  "spell_list_id": 372,
+  "spellcasting_ability_id": 12,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 22,
+    "modifier": 1
+  }, {
+    "ability_id": 52,
+    "modifier": 2
+  }],
+  "id": 599,
+  "name": "wildhunt shifter",
+  "slug": "wildhunt-shifter",
+  "sources_rels": [{
+    "page": 34,
+    "source_id": 83
+  }],
+  "spell_list_id": null,
+  "spellcasting_ability_id": null,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 2,
+    "modifier": 2
+  }, {
+    "ability_id": 32,
+    "modifier": 1
+  }],
+  "id": 412,
+  "name": "winged tiefling",
+  "slug": "winged-tiefling",
+  "sources_rels": [{
+    "page": 118,
+    "source_id": 22
+  }],
+  "spell_list_id": null,
+  "spellcasting_ability_id": null,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 22,
+    "modifier": 2
+  }, {
+    "ability_id": 52,
+    "modifier": 1
+  }],
+  "id": 192,
+  "name": "wood elf",
+  "slug": "wood-elf",
+  "sources_rels": [{
+    "page": 24,
+    "source_id": 12
+  }],
+  "spell_list_id": null,
+  "spellcasting_ability_id": null,
+  "spells_ids": []
+}, {
+  "abilities_rels": [{
+    "ability_id": 2,
+    "modifier": 2
+  }, {
+    "ability_id": 32,
+    "modifier": 1
+  }],
+  "id": 342,
+  "name": "yuan-ti pureblood",
+  "slug": "yuan-ti-pureblood",
+  "sources_rels": [{
+    "page": 120,
+    "source_id": 42
+  }],
+  "spell_list_id": 502,
+  "spellcasting_ability_id": 2,
+  "spells_ids": []
+}]

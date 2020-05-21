@@ -1,0 +1,39 @@
+[
+  {
+    "abbreviation": "str",
+    "id": 42,
+    "name": "strength",
+    "original_name": null,
+    "order": 0
+  }, {
+    "abbreviation": "dex",
+    "id": 22,
+    "name": "dexterity",
+    "original_name": null,
+    "order": 1
+  }, {
+    "abbreviation": "con",
+    "id": 12,
+    "name": "constitution",
+    "original_name": null,
+    "order": 2
+  }, {
+    "abbreviation": "int",
+    "id": 32,
+    "name": "intelligence",
+    "original_name": null,
+    "order": 3
+  }, {
+    "abbreviation": "wis",
+    "id": 52,
+    "name": "wisdom",
+    "original_name": null,
+    "order": 4
+  }, {
+    "abbreviation": "cha",
+    "id": 2,
+    "name": "charisma",
+    "original_name": null,
+    "order": 5
+  }
+]

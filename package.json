@@ -1,7 +1,7 @@
 {
-  "name": "music-bot",
+  "name": "DND-Bot",
   "version": "1.0.0",
-  "description": "",
+  "description": "a bot for general DND (and other TTRPG usage). Allows for music streaming in voice channels, dice rolling, and DND 5E spell lookup",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
