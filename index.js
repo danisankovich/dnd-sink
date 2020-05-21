@@ -94,4 +94,7 @@ client.on('message', msg => {
     const spellName = msg.content.substr(msg.content.indexOf(' ')+1)
     return msg.channel.send(`${findSpellByName(spellName)}`);
   }
+  if (msg.content.startsWith('!help')) {
+    return msg.channel.send(`List of commands can be found here: https://github.com/mikesankovich/dnd-bot`);
+  }
 });
