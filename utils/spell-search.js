@@ -1,5 +1,6 @@
 const spells = require('../resources/spells.json');
 const spellSchools = require('../resources/spell_schools.json');
+const sources = require('../resources/sources.json');
 
 function findSpellByName(name) {
   const found = spells.find(spell => spell.name.toLowerCase().replace(/-/g, ' ') === name.toLowerCase().replace(/-/g, ' '));
@@ -14,6 +15,7 @@ function findSpellByName(name) {
   const isRitual = found.is_ritual ? 'Ritual' : '';
   const level = found.level === 0 ? 'Cantrip' : found.level;
   const spellSchool = spellSchools.find(school => school.id === found.spell_school_id).name;
+  const sourceString = generateSourceString(found.sources_rels);
 
   return `
   **Name:** ${found.name} ${isRitual ? '(Ritual)' : ''}
@@ -23,7 +25,16 @@ function findSpellByName(name) {
 **Duration:** ${durationString} ${isConcentration ? '(Concentration)' : ''}
 **Components:** ${componentString}
 **Range:** ${rangeString}
-**Description:** ${found.description.replace(/<\/?p>/gm, '\n').replace(/<\/?strong>/gm, '**')}`;
+**Description:** ${found.description.replace(/<\/?p>/gm, '\n').replace(/<\/?strong>/gm, '**')}
+**Source:** ${sourceString}
+`;
+}
+
+function generateSourceString(sourceRels) {
+  return sourceRels.map(sourceData => {
+    const sourceId = sourceData.source_id;
+    return `${sources.find(source => source.id === sourceId).name} pg. ${sourceData.page}`;
+  }).join(', ');
 }
 
 function generateRangeString(range, rangeUnit) {
