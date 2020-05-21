@@ -11,9 +11,7 @@ client.on('ready', () => {
 });
 
 const queue = new Map();
-const state = {
-
-}
+const state = {}
 
 client.on('message', msg => {
   const serverQueue = queue.get(msg.guild.id);
@@ -58,9 +56,37 @@ client.on('message', msg => {
       msg.channel.send(`Music must be in the queue to use this command`);
       return;
     }
-    const x = serverQueue.songs.map((song, i) => `${i + 1}) ${song.title}`).join('\n')
+    const songString = serverQueue.songs.map((song, i) => `${i + 1}) ${song.title}`).join('\n')
 
-    serverQueue.textChannel.send(`| Queue: \n ${x}`);
+    serverQueue.textChannel.send(`| Queue: \n ${songString}`);
+  }
+  if (msg.content.startsWith('!r') || msg.content.startsWith('!remove')) {
+    if (!serverQueue) {
+      msg.channel.send(`Music must be in the queue to use this command`);
+      return;
+    }
+    const removeTitle = msg.content.substr(msg.content.indexOf(' ')+1).toLowerCase();
+
+    const removeIndex = serverQueue.songs.findIndex(song => song.title.toLowerCase().indexOf(removeTitle) > -1);
+    if (removeIndex > -1) {
+      serverQueue.textChannel.send(`Removed ${serverQueue.songs[removeIndex].title} from queue`);
+        serverQueue.songs.splice(removeIndex, 1);
+        if (removeIndex === 0) {
+          play(msg.guild, serverQueue.songs[0]);
+        }
+    } else {
+      serverQueue.textChannel.send(`Title matching ${removeTitle} not found in queue`);
+    }
+  }
+  if (msg.content.startsWith('!c') || msg.content.startsWith('!clear')) {
+    if (!serverQueue) {
+      msg.channel.send(`Music must be in the queue to use this command`);
+      return;
+    }
+    serverQueue.songs = [];
+  }
+  if (msg.content.startsWith('/r') || msg.content.startsWith('/roll')) {
+    rollDice(msg);
   }
 });
 
@@ -131,4 +157,49 @@ function play(guild, song) {
     .on("error", error => console.error(error));
   dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
   serverQueue.textChannel.send(`Start playing: **${song.title}**`);
+}
+
+function rollDice(message) {
+  const diceString = message.content.substr(message.content.indexOf(' ')+1);
+
+  let value = 0;
+  let sym = '+'
+  const splitter = diceString.split(' ');
+  for (let i = 0; i < splitter.length; i++) {
+    if (!isNaN(splitter[i])) {
+      if (sym === '+') {
+        value += Number(splitter[i]);
+      }
+      if (sym === '-') {
+        value -= Number(splitter[i]);
+      }
+    }
+    if (isNaN(splitter[i])) {
+      if (splitter[i] === '+') {
+        sym = '+';
+      }
+      if (splitter[i] === '-') {
+        sym = '-';
+      }
+      if (splitter[i].split('d').length === 2) {
+        let [num, dice] = splitter[i].split(/[dD]/);
+        if (num === '') {
+          num = 1;
+        }
+        let result = 0;
+        while (num > 0) {
+          result += Math.ceil(Math.random() * Math.floor(Number(dice)));
+          num--;
+        }
+        if (sym === '+') {
+          value += result;
+        }
+        if (sym === '-') {
+          value -= result;
+        }
+        splitter[i] = `(${result})`
+      }
+    }
+  }
+  message.reply(`\n${diceString}\n${splitter.join(' ')} = ${value}`);
 }
