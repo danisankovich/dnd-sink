@@ -1,10 +1,14 @@
 {
   "name": "DND-Bot",
+  "engines" : {
+    "node" : "^12.16.3"
+  },
   "version": "1.0.0",
   "description": "a bot for general DND (and other TTRPG usage). Allows for music streaming in voice channels, dice rolling, and DND 5E spell lookup",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "dependencies": {
     "@discordjs/opus": "^0.3.2",
@@ -13,6 +17,6 @@
     "ffmpeg": "0.0.4",
     "ytdl-core": "^2.1.3"
   },
-  "author": "",
+  "author": "Dani Sankovich",
   "license": "ISC"
 }

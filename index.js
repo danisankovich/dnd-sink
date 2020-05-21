@@ -1,4 +1,14 @@
+const http = require('http');
+http.createServer((req, res) => {
+res.writeHead(200, {
+    'Content-type': 'text/plain'
+});
+    res.write('Hey');
+    res.end();
+}).listen(4000);
+
 require('dotenv').config();
+
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const TOKEN = process.env.TOKEN;
