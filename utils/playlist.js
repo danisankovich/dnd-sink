@@ -4,6 +4,13 @@ const path = require('path');
 const ytdl = require('ytdl-core');
 const Promise = require('bluebird');
 
+const mongoose = require("mongoose")
+const connectDB = require("../connectDB")
+const database = "dndbot" // Database name
+const Users = require('../Users');
+connectDB("mongodb://localhost:27017/"+database)
+
+
 const fsReadAsync = util.promisify(fs.readFile);
 const fsWriteAsync = util.promisify(fs.writeFile);
 
@@ -130,5 +137,35 @@ async function playPlaylist(message, serverQueue, queue, state, client) {
     }
   }
 }
+
+function insertNewPlaylist(message) {
+  const playlistName = message.content.substr(message.content.indexOf(' ')+1);
+  Users.findOne({userId: message.author.id}, (err, user) => {
+    if (!user) {
+      const insertedUser = new Users({
+        userId: message.author.id,
+        playlists: [{name: playlistName, songs: []}]
+      });
+      return insertedUser.save(err => {
+        if (err) throw err;
+        console.log('Playlist Inserted');
+        mongoose.disconnect();
+      })
+    }
+    const found = user.playlists.find(playlist => playlist.name.toLowerCase() === playlistName.toLowerCase());
+    if (found) {
+      console.log('Playlist by that name already exists in your collection');
+      return mongoose.disconnect();
+    }
+    Users.findByIdAndUpdate(user._id, { $push: {'playlists': { name: playlistName.toLowerCase(), songs: []}}}, (err, u) => {
+      if (err) {
+        throw err;
+      }
+      return mongoose.disconnect();
+    });
+  });
+}
+
+insertNewPlaylist({author: {id: 'asdf'}, content: '!newplaylist test3'})
 
 module.exports = { createPlaylist, playPlaylist, addSongToPlaylist };
