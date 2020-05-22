@@ -17,7 +17,7 @@ const { findSpellByName } = require('./utils/spell-search');
 const rollDice = require('./utils/dice-roll');
 const { next, play, getMusic, stop, remove } = require('./utils/music-utils');
 const { createPlaylist, playPlaylist, addSongToPlaylist, removeSongFromPlaylist, displayPlaylists, displayPlaylistSongs, deletePlaylist } = require('./utils/playlist');
-
+const { findConditionByName } = require('./utils/conditions');
 client.login(TOKEN);
 
 client.on('ready', () => {
@@ -118,6 +118,9 @@ client.on('message', msg => {
   if (msg.content.startsWith('!spell')) {
     const spellName = msg.content.substr(msg.content.indexOf(' ')+1)
     return msg.channel.send(`${findSpellByName(spellName)}`);
+  }
+  if (msg.content.startsWith('!condition')) {
+    return msg.channel.send(`${findConditionByName(msg)}`);
   }
   if (msg.content.startsWith('!help')) {
     return msg.channel.send(`List of commands can be found here: https://danisankovich.github.io/dnd-sink/`);
