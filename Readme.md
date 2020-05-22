@@ -12,6 +12,10 @@ To use these commands you must be connected to a voice channel that the bot has 
  * **!next** (plays the next song)
  * **!loop** (toggles looping for the queue on and off)
  * **!loopsong** (toggles looping for the current song on and off)
+ * **!newplaylist \<PLAYLIST NAME\>** (creates a playlist of \<PLAYLIST NAME\>) **TESTING**
+ * **!addsong \<PLAYLIST NAME\> \<Youtube URL\> \<Youtube URL\> ...** (adds the selected songs to the desired playlist you own) **TESTING**
+ * **!start \<PLAYLIST NAME\>** (plays all songs in the selected playlist. You must be the playlist owner.) **TESTING**
+
 
 ## Dice Roller
 
