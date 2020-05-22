@@ -32,10 +32,10 @@ To use these commands you must be connected to a voice channel that the bot has 
 In any channel where DND-Sink has access you can use the diceroller
 **!roll \<STRING\>**
 examples
-* !roll d20  --> roles a single d20
-* !roll 2d6 + 6 --> roles two d6s and adds 6 to the value
-* !roll 2d6 - 1d4 + 1d20 + 4  --> rolls 2d6s, a d4, a d20 and adds/subtracts all the values where appropriate
-* !adv <string> or !disadv <string> --> rolls the dice string provided twice to simulate advantage and disadvantage
+* **!roll d20**  --> roles a single d20
+* **!roll 2d6 + 6** --> roles two d6s and adds 6 to the value
+* **!roll 2d6 - 1d4 + 1d20 + 4**  --> rolls 2d6s, a d4, a d20 and adds/subtracts all the values where appropriate
+* **!adv <string> or !disadv <string>** --> rolls the dice string provided twice to simulate advantage and disadvantage
 
 Supports addition and subtraction. Any number and combination of dice can be used.
 
@@ -44,8 +44,8 @@ Supports addition and subtraction. Any number and combination of dice can be use
 you can look up spell information for DND 5E spells using the **!spell \<Spell Name\>** command.
 ex.
 
- - !spell thaumaturgy
- - !spell green-flame blade
- - !spell heal
+ - **!spell thaumaturgy**
+ - **!spell green-flame blade**
+ - **!spell heal**
 
 The bot currently supports all spells up to Explorer's Guide to Wildemount (EGW will be coming in a future release)
