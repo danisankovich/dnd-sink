@@ -90,7 +90,7 @@ client.on('message', msg => {
   if (msg.content.startsWith('!roll')) {
     return rollDice(msg);
   }
-  if (msg.content.startsWith('!double')) {
+  if (msg.content.startsWith('!adv') || msg.content.startsWith('!disadv')) {
     rollDice(msg);
     return rollDice(msg);
   }
