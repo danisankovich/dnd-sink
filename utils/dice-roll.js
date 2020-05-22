@@ -1,4 +1,4 @@
-module.exports = function rollDice(message) {
+module.exports = function rollDice(message, isDouble) {
   const diceString = message.content.substr(message.content.indexOf(' ')+1);
 
   let value = 0;
@@ -51,6 +51,9 @@ module.exports = function rollDice(message) {
     }
   }
   if (!badCharacter) {
-    message.reply(`\n${diceString}\n${splitter.join(' ')} = ${value}`);
+    if (!isDouble) {
+      return message.reply(`\n${diceString}\n${splitter.join(' ')} = ${value}`);
+    }
+    return message.channel.send(`\n${diceString}\n${splitter.join(' ')} = ${value}`);
   }
 }

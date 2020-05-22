@@ -92,7 +92,7 @@ client.on('message', msg => {
   }
   if (msg.content.startsWith('!adv') || msg.content.startsWith('!disadv')) {
     rollDice(msg);
-    return rollDice(msg);
+    return rollDice(msg, true);
   }
   if (msg.content.startsWith('!spell')) {
     const spellName = msg.content.substr(msg.content.indexOf(' ')+1)
