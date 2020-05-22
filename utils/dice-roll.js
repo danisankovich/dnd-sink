@@ -6,7 +6,7 @@ module.exports = function rollDice(message, isDouble) {
     return message.reply(result.error);
   }
   if (isDouble) {
-    result = `${result}${roll(diceString)}`
+    result = `${result}\n${roll(diceString)}`
   }
   return message.reply(result);
 }
