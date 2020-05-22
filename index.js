@@ -90,6 +90,10 @@ client.on('message', msg => {
   if (msg.content.startsWith('!roll')) {
     return rollDice(msg);
   }
+  if (msg.content.startsWith('!double')) {
+    rollDice(msg);
+    return rollDice(msg);
+  }
   if (msg.content.startsWith('!spell')) {
     const spellName = msg.content.substr(msg.content.indexOf(' ')+1)
     return msg.channel.send(`${findSpellByName(spellName)}`);
