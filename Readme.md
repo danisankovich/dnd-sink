@@ -21,6 +21,7 @@ examples
 * !roll d20  --> roles a single d20
 * !roll 2d6 + 6 --> roles two d6s and adds 6 to the value
 * !roll 2d6 - 1d4 + 1d20 + 4  --> rolls 2d6s, a d4, a d20 and adds/subtracts all the values where appropriate
+* !adv <string> or !disadv <string> --> rolls the dice string provided twice to simulate advantage and disadvantage
 
 Supports addition and subtraction. Any number and combination of dice can be used.
 
