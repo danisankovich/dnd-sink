@@ -38,6 +38,9 @@ client.on('message', msg => {
   if (msg.content.startsWith('!addsong')) {
       return addSongToPlaylist(msg);
   }
+  if (msg.content.startsWith('!removesong')) {
+      return removeSongFromPlaylist(msg);
+  }
   if (msg.content.startsWith('!newplaylist')) {
       return createPlaylist(msg);
   }

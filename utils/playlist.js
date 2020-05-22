@@ -145,8 +145,9 @@ async function removeSongFromPlaylist(message) {
   }
 
   const splitter = stringContent.split(' ');
-  const playlist = splitter[0].toLowerCase();;
+  const playlist = splitter[0].toLowerCase();
   splitter.shift();
+  const songToRemove = splitter.join(' ');
 
   Users.findOne({userId: message.author.id}, (err, user) => {
     if (err) {
@@ -162,29 +163,22 @@ async function removeSongFromPlaylist(message) {
       message.reply('You have no playlists by that name in your collection');
       return;
     }
-    Promise.map(splitter, async songUrl => {
-      let title, url;
-      try {
-        ({ title, video_url: url } = await ytdl.getInfo(songUrl));
-      } catch (e) {
-        return message.reply(`Error: ${e.message}`);
-      }
-      const song = { title, url };
-      const songFound = findPlaylist.songs.find(s => s.title === title);
 
-      if (songFound) {
-        message.reply(title, ' is already in playlist');
-        return;
+    const songFoundIndex = findPlaylist.songs.findIndex(s => s.title.toLowerCase().indexOf(songToRemove.toLowerCase()) > -1);
+
+    if (songFoundIndex === -1) {
+      message.reply(`No songs matching ${songToRemove} were found in your playlist`);
+      return;
+    }
+    const target = findPlaylist.songs[songFoundIndex].title;
+    findPlaylist.songs.splice(songFoundIndex, 1);
+
+    user.markModified('playlists');
+    user.save(err => {
+      if (err) {
+        throw err;
       }
-      findPlaylist.songs.push(song);
-    }).then(() => {
-      user.markModified('playlists');
-      user.save(err => {
-        if (err) {
-          throw err;
-        }
-        message.reply('Songs added')
-      });
+      message.reply(`${target} Removed`);
     });
   });
 }
@@ -193,7 +187,6 @@ function displayPlaylists(message) {
   const userId = message.author.id;
   Users.findOne({userId}, (err, user) => {
     const playlistNames = user.playlists.map((p, i) => `\n | ${i + 1}) ${p.name}`);
-    console.log(playlistNames);
     message.reply(playlistNames.join('\n'))
   });
 }
@@ -205,12 +198,12 @@ function displayPlaylistSongs(message) {
   Users.findOne({userId}, (err, user) => {
     const playlist = user.playlists.find(p => p.name === playlistName);
     if (!playlist) {
-      return message.reply('You do not have any playlists by the name of ', playlistName, ' in your collection');
+      return message.reply(`You do not have any playlists by the name of ${playlistName} in your collection`);
     }
     const songs = playlist.songs.map((s, i) => {
       return `\n | ${i + 1}) ${s.title}`;
     })
-    console.log(songs);
+
     message.reply(songs.join(''))
   });
 }
