@@ -18,6 +18,7 @@ const rollDice = require('./utils/dice-roll');
 const { next, play, getMusic, stop, remove } = require('./utils/music-utils');
 const { createPlaylist, playPlaylist, addSongToPlaylist, removeSongFromPlaylist, displayPlaylists, displayPlaylistSongs, deletePlaylist } = require('./utils/playlist');
 const { findConditionByName } = require('./utils/conditions');
+const { rollStatsd20, rollStats3d6, rollStats4d6DropLowest, rollStats4d6DropLowestForgiving } = require('./utils/stat-generator');
 client.login(TOKEN);
 
 client.on('ready', () => {
@@ -111,6 +112,22 @@ client.on('message', msg => {
   }
   if (msg.content.startsWith('!roll')) {
     return rollDice(msg);
+  }
+  if (msg.content.startsWith('!stats')) {
+    const type = msg.content.substr(msg.content.indexOf(' ')+1).toLowerCase();
+    let string;
+    if (type === '3d6') {
+      string = rollStats3d6();
+    } else if (type === '4d6') {
+      string = rollStats4d6DropLowest();
+    } else if (type === '4d6*') {
+      string = rollStats4d6DropLowestForgiving();
+    } else if (type === 'd20') {
+      string = rollStatsd20();
+    } else {
+      string = 'Stat type must be "3d6", "4d6", "4d6*", or "d20"';
+    }
+    return msg.reply(`\`\`\`${string}\`\`\``);
   }
   if (msg.content.startsWith('!adv') || msg.content.startsWith('!disadv')) {
     return rollDice(msg, true);
