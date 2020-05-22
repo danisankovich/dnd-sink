@@ -205,7 +205,7 @@ function displayPlaylistSongs(message) {
   Users.findOne({userId}, (err, user) => {
     const playlist = user.playlists.find(p => p.name === playlistName);
     if (!playlist) {
-      message.reply('You do not have any playlists by the name of ', playlistName, ' in your collection');
+      return message.reply('You do not have any playlists by the name of ', playlistName, ' in your collection');
     }
     const songs = playlist.songs.map((s, i) => {
       return `\n | ${i + 1}) ${s.title}`;
