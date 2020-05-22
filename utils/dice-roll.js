@@ -1,9 +1,20 @@
 module.exports = function rollDice(message, isDouble) {
   const diceString = message.content.substr(message.content.indexOf(' ')+1);
 
+  let result = roll(diceString);
+  if (result.error) {
+    return message.reply(result.error);
+  }
+  if (isDouble) {
+    result = `${result}${roll(diceString)}`
+  }
+  return message.reply(result);
+}
+
+function roll(diceString) {
+  const splitter = diceString.split(' ');
   let value = 0;
   let sym = '+'
-  const splitter = diceString.split(' ');
   let badCharacter;
   for (let i = 0; i < splitter.length; i++) {
     if (!isNaN(splitter[i])) {
@@ -22,9 +33,7 @@ module.exports = function rollDice(message, isDouble) {
       } else if (splitter[i].split('d').length === 2) {
         let [num, dice] = splitter[i].split(/[dD]/);
         if (isNaN(dice)) {
-          message.reply(`Bad character found in ${diceString}`);
-          badCharacter = true;
-          break;
+          return { error: `Bad character found in ${diceString}` };
         }
         if (num === '') {
           num = 1;
@@ -43,17 +52,10 @@ module.exports = function rollDice(message, isDouble) {
         splitter[i] = `(${result})`
       } else {
         if (splitter[i] !== ' ') {
-          message.reply(`Bad character found in ${diceString}`);
-          badCharacter = true;
-          break;
+          return { error: `Bad character found in ${diceString}` };
         }
       }
     }
   }
-  if (!badCharacter) {
-    if (!isDouble) {
-      return message.reply(`\n${diceString}\n${splitter.join(' ')} = ${value}`);
-    }
-    return message.channel.send(`\n${diceString}\n${splitter.join(' ')} = ${value}`);
-  }
+  return `\n${diceString}\n${splitter.join(' ')} = ${value}`
 }
