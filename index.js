@@ -91,7 +91,6 @@ client.on('message', msg => {
     return rollDice(msg);
   }
   if (msg.content.startsWith('!adv') || msg.content.startsWith('!disadv')) {
-    rollDice(msg);
     return rollDice(msg, true);
   }
   if (msg.content.startsWith('!spell')) {
