@@ -208,6 +208,26 @@ function displayPlaylistSongs(message) {
   });
 }
 
+function deletePlaylist(message) {
+  const playlistName = message.content.substr(message.content.indexOf(' ')+1).toLowerCase();
+
+  const userId = message.author.id;
+  Users.findOne({userId}, (err, user) => {
+    const playlistIndex = user.playlists.findIndex(p => p.name === playlistName);
+    if (playlistIndex === -1) {
+      return message.reply(`You do not have any playlists by the name of ${playlistName} in your collection`);
+    }
+    user.playlists.splice(playlistIndex, 1);
+    user.markModified('playlist')
+    user.save(err => {
+      if (err) {
+        throw err;
+      }
+      message.reply(`${playlistName} Removed`);
+    });
+  });
+}
+
 // insertNewPlaylist({author: {id: 'asdf'}, content: '!newplaylist test4'})
 
-module.exports = { createPlaylist, playPlaylist, addSongToPlaylist, displayPlaylists, displayPlaylistSongs, removeSongFromPlaylist };
+module.exports = { createPlaylist, playPlaylist, addSongToPlaylist, displayPlaylists, displayPlaylistSongs, removeSongFromPlaylist, deletePlaylist};

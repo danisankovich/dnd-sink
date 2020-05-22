@@ -16,7 +16,7 @@ const TOKEN = process.env.TOKEN;
 const { findSpellByName } = require('./utils/spell-search');
 const rollDice = require('./utils/dice-roll');
 const { next, play, getMusic, stop, remove } = require('./utils/music-utils');
-const { createPlaylist, playPlaylist, addSongToPlaylist, removeSongFromPlaylist, displayPlaylists, displayPlaylistSongs } = require('./utils/playlist');
+const { createPlaylist, playPlaylist, addSongToPlaylist, removeSongFromPlaylist, displayPlaylists, displayPlaylistSongs, deletePlaylist } = require('./utils/playlist');
 
 client.login(TOKEN);
 
@@ -43,6 +43,9 @@ client.on('message', msg => {
   }
   if (msg.content.startsWith('!newplaylist')) {
       return createPlaylist(msg);
+  }
+  if (msg.content.startsWith('!deleteplaylist')) {
+      return deletePlaylist(msg);
   }
   if (msg.content.startsWith('!showplaylistsongs')) {
       return displayPlaylistSongs(msg);
