@@ -23,45 +23,55 @@ async function addSongToPlaylist(message) {
   }
 
   const splitter = stringContent.split(' ');
-  const playlist = splitter[0];
+  const playlist = splitter[0].toLowerCase();;
   splitter.shift();
 
-  let playlists;
-  try {
-    playlists = await fsReadAsync(path.join(__dirname, 'playlist.json'), 'utf-8');
-    if (playlists) {
-      playlists = JSON.parse(playlists);
+  Users.findOne({userId: message.author.id}, (err, user) => {
+    if (err) {
+      throw err;
     }
-  } catch (err) {
-    console.log(err);
-    return;
-  }
+    if (!user || user.playlists.length === 0) {
+      console.log('You have no playlists in your collection');
+      return mongoose.disconnect();
+    }
 
-  if (!playlists[message.author.id] || !playlists[message.author.id][playlist]) {
-    return message.reply(`You don't have a playlist named ${playlist} in your list`);
-  }
+    const findPlaylist = user.playlists.find(p => p.name === playlist);
+    if (!findPlaylist) {
+      console.log('You have no playlists by that name in your collection');
+      return mongoose.disconnect();
+    }
 
-  Promise.map(splitter, async songUrl => {
-    let title, url;
-    try {
-      ({ title, video_url: url } = await ytdl.getInfo(songUrl));
-    } catch (e) {
-      return message.reply(`Error: ${e.message}`);
-    }
-    const song = { title, url };
-    playlists[message.author.id][playlist].push(song);
-  }).then(async () => {
-    try {
-      await fsWriteAsync(path.join(__dirname, 'playlist.json'), JSON.stringify(playlists, null, 2));
-      message.reply(`Songs Added To Playlist ${playlist}`);
-    } catch (err) {
-      console.log(err);
-      return;
-    }
+    Promise.map(splitter, async songUrl => {
+      let title, url;
+      try {
+        ({ title, video_url: url } = await ytdl.getInfo(songUrl));
+      } catch (e) {
+        return message.reply(`Error: ${e.message}`);
+      }
+      const song = { title, url };
+      const songFound = findPlaylist.songs.find(s => song.title === title);
+      if (songFound) {
+        console.log('song is already in playlist');
+        return;
+      }
+      findPlaylist.songs.push(song);
+    }).then(() => {
+      user.markModified('playlists');
+      user.save(err => {
+        if (err) {
+          throw err;
+        }
+        console.log('user saved');
+        return mongoose.disconnect();
+      });
+    });
   });
 }
 
-async function createPlaylist(message) {
+// addSongToPlaylist({author: {id: 'asdf'}, content: '!addsong test4 https://www.youtube.com/watch?v=YYfoWIlt9vw https://www.youtube.com/watch?v=9SbT71beG0Q'})
+
+
+// async function createPlaylist(message) {
   const userId = message.author.id;
   const playlistName = message.content.substr(message.content.indexOf(' ')+1);
   if (playlistName) {
@@ -138,8 +148,8 @@ async function playPlaylist(message, serverQueue, queue, state, client) {
   }
 }
 
-function insertNewPlaylist(message) {
-  const playlistName = message.content.substr(message.content.indexOf(' ')+1);
+function createPlaylist(message) {
+  const playlistName = message.content.substr(message.content.indexOf(' ')+1).toLowerCase();
   Users.findOne({userId: message.author.id}, (err, user) => {
     if (!user) {
       const insertedUser = new Users({
@@ -152,20 +162,23 @@ function insertNewPlaylist(message) {
         mongoose.disconnect();
       })
     }
-    const found = user.playlists.find(playlist => playlist.name.toLowerCase() === playlistName.toLowerCase());
+    const found = user.playlists.find(playlist => playlist.name === playlistName);
     if (found) {
       console.log('Playlist by that name already exists in your collection');
       return mongoose.disconnect();
     }
-    Users.findByIdAndUpdate(user._id, { $push: {'playlists': { name: playlistName.toLowerCase(), songs: []}}}, (err, u) => {
+    user.playlists.push({name: playlistName, songs: []});
+    user.markModified('playlists');
+    user.save(err => {
       if (err) {
         throw err;
       }
+      console.log('Playlist Inserted');
       return mongoose.disconnect();
-    });
+    })
   });
 }
 
-insertNewPlaylist({author: {id: 'asdf'}, content: '!newplaylist test3'})
+// insertNewPlaylist({author: {id: 'asdf'}, content: '!newplaylist test4'})
 
 module.exports = { createPlaylist, playPlaylist, addSongToPlaylist };
