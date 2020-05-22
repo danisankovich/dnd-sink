@@ -29,13 +29,13 @@ async function addSongToPlaylist(message) {
     }
     if (!user || user.playlists.length === 0) {
       message.reply('You have no playlists in your collection');
-      return mongoose.disconnect();
+      return;
     }
 
     const findPlaylist = user.playlists.find(p => p.name === playlist);
     if (!findPlaylist) {
       message.reply('You have no playlists by that name in your collection');
-      return mongoose.disconnect();
+      return;
     }
     Promise.map(splitter, async songUrl => {
       let title, url;
@@ -58,8 +58,7 @@ async function addSongToPlaylist(message) {
         if (err) {
           throw err;
         }
-        message.reply('Songs Added')
-        mongoose.disconnect();
+        message.reply('Songs Added');
       });
     });
   });
@@ -82,7 +81,7 @@ async function playPlaylist(message, serverQueue, queue, state, client) {
     const found = user.playlists.find(playlist => playlist.name === playlistName);
     if (!found) {
       message.reply('You do not have a playlist by that name in your collection');
-      return mongoose.disconnect();
+      return;
     }
     const { songs, name } = found;
     if (!serverQueue || !client.voice.connections.has(voiceChannel.guild.id)) {
@@ -101,7 +100,6 @@ async function playPlaylist(message, serverQueue, queue, state, client) {
         queueConstruct.connection = connection;
         play(message.guild, queueConstruct.songs[0], queue, state);
         message.reply(`Playing ${playlistName}`);
-        mongoose.disconnect();
       } catch (e) {
         queue.delete(message.guild.id);
         return message.channel.send(`Error: ${e.message}`);
@@ -121,13 +119,12 @@ function createPlaylist(message) {
       return insertedUser.save(err => {
         if (err) throw err;
         message.reply('Playlist Created');
-        mongoose.disconnect();
       })
     }
     const found = user.playlists.find(playlist => playlist.name === playlistName);
     if (found) {
       message.reply('Playlist by that name already exists in your collection');
-      return mongoose.disconnect();
+      return;
     }
     user.playlists.push({name: playlistName, songs: []});
     user.markModified('playlists');
@@ -136,7 +133,7 @@ function createPlaylist(message) {
         throw err;
       }
       message.reply('Playlist Created');
-      return mongoose.disconnect();
+      return;
     })
   });
 }
@@ -157,13 +154,13 @@ async function removeSongFromPlaylist(message) {
     }
     if (!user || user.playlists.length === 0) {
       message.reply('You have no playlists in your collection');
-      return mongoose.disconnect();
+      return;
     }
 
     const findPlaylist = user.playlists.find(p => p.name === playlist);
     if (!findPlaylist) {
       message.reply('You have no playlists by that name in your collection');
-      return mongoose.disconnect();
+      return;
     }
     Promise.map(splitter, async songUrl => {
       let title, url;
@@ -187,7 +184,6 @@ async function removeSongFromPlaylist(message) {
           throw err;
         }
         message.reply('Songs added')
-        mongoose.disconnect();
       });
     });
   });
