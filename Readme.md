@@ -43,7 +43,7 @@ In any channel where DND-Sink has access you can use the stat generator
 * **!stats 3d6** --> rolls 3d6 six times
 * **!stats d20**  --> roles a single d20 six times
 * **!stats 4d6** --> roles 4d6s and drops the lowest value six times
-* **!stats !4d6\***  --> roles 4d6s and drops the lowest value six times. In any set if two ones are rolled a single dice is rolled in their place.
+* **!stats 4d6\***  --> roles 4d6s and drops the lowest value six times. In any set if two ones are rolled a single dice is rolled in their place.
 
 ## Spell Lookup
 
