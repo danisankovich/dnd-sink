@@ -61,3 +61,8 @@ The bot currently supports all spells up to Explorer's Guide to Wildemount (EGW 
 You can look up information regarding each of the DND 5E conditions
 * **!condition** --> provides basic information regarding conditions.
 * **!condition \<Condition Name\>** --> Provides information about the provided condition.
+
+## NPC Generator
+
+* **!generate \<Race\>** --> Generates a random NPC of the given race.
+Supports human, elf, tiefling, aasimar, gnome, halfling, dwarf, orc, half-elf, half-orc, and dragonborn. Supplying another race will select from this list.
