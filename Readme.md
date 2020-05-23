@@ -55,3 +55,9 @@ ex.
  - **!spell heal**
 
 The bot currently supports all spells up to Explorer's Guide to Wildemount (EGW will be coming in a future release)
+
+## Condition Lookup
+
+You can look up information regarding each of the DND 5E conditions
+* **!condition** --> provides basic information regarding conditions.
+* **!condition \<Condition Name\>** --> Provides information about the provided condition.
