@@ -35,7 +35,7 @@ examples
 * **!roll d20**  --> rolls a single d20
 * **!roll 2d6 + 6** --> rolls two d6s and adds 6 to the value
 * **!roll 2d6 - 1d4 + 1d20 + 4**  --> rolls 2d6s, a d4, a d20 and adds/subtracts all the values where appropriate
-* **!adv <string> or !disadv <string>** --> rolls the dice string provided twice to simulate advantage and disadvantage
+* **!adv <string> or !disadv \<string\>** --> rolls the dice string provided twice to simulate advantage and disadvantage
 
 ## Stat Generator
 
@@ -43,7 +43,7 @@ In any channel where DND-Sink has access you can use the stat generator
 * **!stats 3d6** --> rolls 3d6 six times
 * **!stats d20**  --> roles a single d20 six times
 * **!stats 4d6** --> roles 4d6s and drops the lowest value six times
-* **!4d6\***  --> roles 4d6s and drops the lowest value six times. In any set if two ones are rolled a single dice is rolled in their place.
+* **!stats !4d6\***  --> roles 4d6s and drops the lowest value six times. In any set if two ones are rolled a single dice is rolled in their place.
 
 ## Spell Lookup
 
