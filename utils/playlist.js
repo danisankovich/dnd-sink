@@ -58,6 +58,7 @@ async function addSongToPlaylist(message) {
       return;
     }
     findPlaylist.songs.push(song);
+    findPlaylist.lastTouched = new Date();
     user.markModified('playlists');
     user.save(err => {
       if (err) {
@@ -118,7 +119,7 @@ function createPlaylist(message) {
     if (!user) {
       const insertedUser = new Users({
         userId: message.author.id,
-        playlists: [{name: playlistName, songs: []}]
+        playlists: [{name: playlistName, songs: [], lastTouched: new Date()}]
       });
       return insertedUser.save(err => {
         if (err) throw err;
@@ -130,7 +131,7 @@ function createPlaylist(message) {
       message.reply('Playlist by that name already exists in your collection');
       return;
     }
-    user.playlists.push({name: playlistName, songs: []});
+    user.playlists.push({name: playlistName, songs: [], lastTouched: new Date()});
     user.markModified('playlists');
     user.save(err => {
       if (err) {
@@ -176,7 +177,7 @@ async function removeSongFromPlaylist(message) {
     }
     const target = findPlaylist.songs[songFoundIndex].title;
     findPlaylist.songs.splice(songFoundIndex, 1);
-
+    findPlaylist.lastTouched = new Date();
     user.markModified('playlists');
     user.save(err => {
       if (err) {

@@ -1,0 +1,13 @@
+[
+  { "race": "human", "nameList": ["human"], "baseHeight": 56, "heightModifier": "2d10", "baseWeight": 110, "weightModifier": "2d4"},
+  { "race": "elf", "nameList": ["elf"], "baseHeight": 54, "heightModifier": "2d10", "baseWeight": 90, "weightModifier": "1d4"},
+  { "race": "tiefling", "nameList": ["tiefling", "human"], "baseHeight": 57, "heightModifier": "2d8", "baseWeight": 110, "weightModifier": "2d4"},
+  { "race": "aasimar", "nameList": ["human", "aasimar"], "baseHeight": 56, "heightModifier": "2d10", "baseWeight": 110, "weightModifier": "2d4"},
+  { "race": "gnome", "nameList": ["gnome"], "baseHeight": 35, "heightModifier": "2d4", "baseWeight": 35, "weightModifier": "1d1"},
+  { "race": "halfling", "nameList": ["halfling"], "baseHeight": 31, "heightModifier": "2d4", "baseWeight": 35, "weightModifier": "1d1"},
+  { "race": "dwarf", "nameList": ["dwarf"], "baseHeight": 48, "heightModifier": "2d4", "baseWeight": 115, "weightModifier": "2d6"},
+  { "race": "orc", "nameList": ["orc"], "baseHeight": 60, "heightModifier": "2d12", "baseWeight": 160, "weightModifier": "1d10"},
+  { "race": "half-elf", "nameList": ["elf", "human"], "baseHeight": 57, "heightModifier": "2d8", "baseWeight": 110, "weightModifier": "2d4"},
+  { "race": "half-orc", "nameList": ["orc", "human"], "baseHeight": 58, "heightModifier": "2d10", "baseWeight": 140, "weightModifier": "2d6"},
+  { "race": "dragonborn", "nameList": ["dragonborn"], "baseHeight": 66, "heightModifier": "2d18", "baseWeight": 175, "weightModifier": "2d6"}
+]
