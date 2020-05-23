@@ -1,4 +1,19 @@
 # DND-Sink
+
+DND-Sink provides functionality useful for running and participating in a DND campaign.
+
+Functionality includes music capabilities, dice rolling, stat generation, spell lookup, and condition lookup.
+
+Music: Connect to a voice channel to stream music from youtube. The bot provides the ability to create and save playlists.
+
+Spell Lookup: The bot can lookup any DND 5E spell up until Explorer's Guide to Wildemount.
+
+Condition Lookup: The bot can provide info the the DND 5E conditions.
+
+NPC Generator: the bot can generate an NPC
+
+DND-Sink also comes with a dynamic dice roller and an included stat generator for new characters.
+
 [Click Here](https://discord.com/oauth2/authorize?client_id=712699373183565915&permissions=36702208&scope=bot) to add the bot to your server
 
 ## Miscellaneous
