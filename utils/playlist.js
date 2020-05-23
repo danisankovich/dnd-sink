@@ -1,7 +1,7 @@
 const fs = require('fs');
 const util = require('util');
 const path = require('path');
-const ytdl = require('ytdl-core');
+const ytsr = require('ytsr');
 const Promise = require('bluebird');
 
 const mongoose = require("mongoose")
@@ -20,10 +20,11 @@ async function addSongToPlaylist(message) {
   }
 
   const splitter = stringContent.split(' ');
-  const playlist = splitter[0].toLowerCase();;
+  const playlist = splitter[0].toLowerCase();
   splitter.shift();
+  const songName = splitter.join(' ');
 
-  Users.findOne({userId: message.author.id}, (err, user) => {
+  Users.findOne({userId: message.author.id}, async (err, user) => {
     if (err) {
       throw err;
     }
@@ -37,29 +38,32 @@ async function addSongToPlaylist(message) {
       message.reply('You have no playlists by that name in your collection');
       return;
     }
-    Promise.map(splitter, async songUrl => {
-      let title, url;
-      try {
-        ({ title, video_url: url } = await ytdl.getInfo(songUrl));
-      } catch (e) {
-        return message.reply(`Error: ${e.message}`);
+    let title, url;
+    try {
+      const x = await ytsr(songName, { limit: 1 });
+      if (x && x.items) {
+        ({ title, link: url } = x.items[0]);
       }
-      const song = { title, url };
-      const songFound = findPlaylist.songs.find(s => s.title === title);
+      if (!title || !url) {
+        return message.reply(`${songName} could not be found`);
+      }
+    } catch (e) {
+      return message.reply(`Error: ${e.message}`);
+    }
+    const song = { title, url };
+    const songFound = findPlaylist.songs.find(s => s.title === title);
 
-      if (songFound) {
-        message.reply(title, ' is already in playlist');
-        return;
+    if (songFound) {
+      message.reply(title, ' is already in playlist');
+      return;
+    }
+    findPlaylist.songs.push(song);
+    user.markModified('playlists');
+    user.save(err => {
+      if (err) {
+        throw err;
       }
-      findPlaylist.songs.push(song);
-    }).then(() => {
-      user.markModified('playlists');
-      user.save(err => {
-        if (err) {
-          throw err;
-        }
-        message.reply('Songs Added');
-      });
+      message.reply('Songs Added');
     });
   });
 }

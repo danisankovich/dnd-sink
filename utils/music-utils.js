@@ -1,4 +1,5 @@
 const ytdl = require('ytdl-core');
+const ytsr = require('ytsr');
 
 function next(serverQueue, guild, queue, state) {
   const { loop, loopSong } = (state[guild.id] || {});
@@ -37,7 +38,13 @@ async function getMusic(message, serverQueue, queue, state, client) {
   const songInfo = message.content.substr(message.content.indexOf(' ')+1)
   let title, url;
   try {
-    ({ title, video_url: url } = await ytdl.getInfo(songInfo));
+    const x = await ytsr(songInfo, { limit: 1 });
+    if (x && x.items) {
+      ({ title, link: url } = x.items[0]);
+    }
+    if (!title || !url) {
+      return message.reply(`${songName} could not be found`);
+    }
   } catch (e) {
     return message.channel.send(`Error: ${e.message}`);
   }
