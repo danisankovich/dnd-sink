@@ -18,27 +18,27 @@ DND-Sink also comes with a dynamic dice roller and an included stat generator fo
 
 ## Miscellaneous
 
-* **!help** (displays a link to the readme documentation for this bot)
-
+* **!help** --> displays a link to the readme documentation for this bot.
+* **!feedback \<CONTENT\>** --> Sends CONTENT as feedback to the bot owner. Maximum 250 characters.
 ## Music Commands
 To use these commands you must be connected to a voice channel that the bot has access to.
 
- * **!play \<SONG NAME\>** (add the provided song to the queue and start the player)
- * **!stop** (stops the music and clears the queue)
- * **!queue** (displays the current queue)
- * **!clear** (clears all songs from the queue)
- * **!remove \<SONG TITLE\>** (remove the provided song from the queue. Must match a song in the queue)
- * **!restart** (restarts the current song)
- * **!next** (plays the next song)
- * **!loop** (toggles looping for the queue on and off)
- * **!loopsong** (toggles looping for the current song on and off)
- * **!newplaylist \<PLAYLIST NAME\>** (creates a playlist of \<PLAYLIST NAME\>)
- * **!addsong \<PLAYLIST NAME\> \<SONG NAME\>** (adds the selected song to the desired playlist you own)
- * **!removesong \<PLAYLIST NAME \> \<Song Name\>** (removes the selected song from the selected playlist)
- * **!start \<PLAYLIST NAME\>** (plays all songs in the selected playlist. You must be the playlist owner.)
- * **!deleteplaylist \<PLAYLIST NAME\>** (deletes the selected playlist)
- * **!showplaylists** (lists all playlists in your collection)
- * **!showplaylistsongs \<PLAYLIST NAME\>** (shows all songs in the selected playlist)
+ * **!play \<SONG NAME\>** --> add the provided song to the queue and start the player.
+ * **!stop** --> stops the music and clears the queue
+ * **!queue** --> displays the current queue
+ * **!clear** --> clears all songs from the queue
+ * **!remove \<SONG TITLE\>** --> remove the provided song from the queue. Must match a song in the queue
+ * **!restart** --> restarts the current song
+ * **!next** --> plays the next song
+ * **!loop** --> toggles looping for the queue on and off
+ * **!loopsong** --> toggles looping for the current song on and off
+ * **!newplaylist \<PLAYLIST NAME\>** --> creates a playlist of \<PLAYLIST NAME\>
+ * **!addsong \<PLAYLIST NAME\> \<SONG NAME\>** --> adds the selected song to the desired playlist you own
+ * **!removesong \<PLAYLIST NAME \> \<Song Name\>** --> removes the selected song from the selected playlist
+ * **!start \<PLAYLIST NAME\>** --> plays all songs in the selected playlist. You must be the playlist owner.
+ * **!deleteplaylist \<PLAYLIST NAME\>** --> deletes the selected playlist
+ * **!showplaylists** --> lists all playlists in your collection
+ * **!showplaylistsongs \<PLAYLIST NAME\>** --> shows all songs in the selected playlist
 
 
 

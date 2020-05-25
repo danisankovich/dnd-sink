@@ -4,6 +4,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const TOKEN = process.env.TOKEN;
 
+const feedback = require('./utils/feedback');
 const { findSpellByName } = require('./utils/spell-search');
 const rollDice = require('./utils/dice-roll');
 const { next, play, getMusic, stop, remove } = require('./utils/music-utils');
@@ -136,5 +137,14 @@ client.on('message', msg => {
   }
   if (msg.content.startsWith('!help')) {
     return msg.channel.send(`List of commands can be found here: https://danisankovich.github.io/dnd-sink/`);
+  }
+  if (msg.content.startsWith('!feedback')) {
+    const content = msg.content.substr(msg.content.indexOf(' ')+1);
+    if (content === '!feedback') {
+      return msg.reply('Must provide feedback');
+    }
+    feedback(content).then(e => {
+      return msg.reply('Feedback sent. Thank you for your input.');
+    })
   }
 });

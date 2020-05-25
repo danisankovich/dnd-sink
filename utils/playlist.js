@@ -2,7 +2,6 @@ const fs = require('fs');
 const util = require('util');
 const path = require('path');
 const ytsr = require('ytsr');
-const Promise = require('bluebird');
 
 const mongoose = require("mongoose")
 const connectDB = require("../connectDB")
