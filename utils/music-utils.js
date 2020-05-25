@@ -28,7 +28,9 @@ function play(guild, song, queue, state) {
     })
     .on("error", error => console.error(error));
   dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
-  serverQueue.textChannel.send(`Start playing: **${song.title}**`);
+  if (!state[guild.id] || !state[guild.id].loopSong) {
+    serverQueue.textChannel.send(`Start playing: **${song.title}**`);
+  }
 }
 
 async function getMusic(message, serverQueue, queue, state, client) {

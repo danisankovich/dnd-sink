@@ -16,7 +16,11 @@ function generateNPC(msg) {
   let race = races.find(r => r.race === raceName);
   if (!race) {
     const raceNames = races.map(r => r.race).join(', ');
-    msg.reply(`Could not find "${raceName}" in the race collection: ${raceNames}. Generating random character`);
+    if (raceName === '!generate') {
+      msg.reply(`Generating random character`);
+    } else {
+      msg.reply(`Could not find "${raceName}" in the race collection: ${raceNames}. Generating random character`);
+    }
     race = races[Math.floor(Math.random() * races.length)];
   }
   character.race = race.race;
