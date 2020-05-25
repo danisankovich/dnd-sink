@@ -3,12 +3,7 @@ const util = require('util');
 const path = require('path');
 const ytsr = require('ytsr');
 
-const mongoose = require("mongoose")
-const connectDB = require("../connectDB")
-const database = "dndbot";
 const Users = require('../Users');
-connectDB("mongodb://localhost:27017/"+database)
-
 
 const { play } = require('./music-utils');
 

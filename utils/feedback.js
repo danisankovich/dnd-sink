@@ -1,8 +1,5 @@
-const mongoose = require("mongoose")
-const connectDB = require("../connectDB")
-const database = "dndbot";
 const Feedbacks = require('../Feedback');
-connectDB("mongodb://localhost:27017/"+database)
+
 
 async function submitFeedback(content) {
   if (content.length > 250) {

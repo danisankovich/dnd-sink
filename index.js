@@ -1,5 +1,8 @@
 require('dotenv').config();
-
+const mongoose = require("mongoose")
+const connectDB = require("../connectDB")
+const database = "dndbot";
+connectDB("mongodb://localhost:27017/"+database)
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const TOKEN = process.env.TOKEN;
