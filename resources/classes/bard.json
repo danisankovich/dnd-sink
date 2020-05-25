@@ -42,46 +42,46 @@
   "college of glamour": {
     "name": "College of Glamour",
     "description":" ```The College of Glamour is the home of bards who mastered their craft in the vibrant realm of the Feywild or under the tutelage of someone who dwelled there. Tutored by satyrs, eladrin, and other fey, these bards learn to use their magic to delight and captivate others. \n\n The bards of this college are regarded with a mixture of awe and fear. Their performances are the stuff of legend. These bards are so eloquent that a speech or song that one of them performs can cause captors to release the bard unharmed and can lull a furious dragon into complacency. The same magic that allows them to quell beasts can also bend minds. Villainous bards of this college can leech off a community for weeks, misusing their magic to turn their hosts into thralls. Heroic bards of this college instead use this power to gladden the downtrodden and undermine oppressors.```",
-    "features": {
-      "mantle of inspiration": {
+    "features": [
+      {
         "name": "Mantle of Inspiration",
         "description":" ```When you join the College of Glamour at 3rd level, you gain the ability to weave a song of fey magic that imbues your allies with vigor and speed. \n\n As a bonus action, you can expend one use of your Bardic Inspiration to grant yourself a wondrous appearance. When you do so, choose a number of creatures you can see and that can see you within 60 feet of you, up to a number equal to your Charisma modifier (minimum of one). Each of them gains 5 temporary hit points. When a creature gains these temporary hit points, it can immediately use its reaction to move up to its speed, without provoking opportunity attacks. \n\n The number of temporary hit points increases when you reach certain levels in this class, increasing to 8 at 5th level, 11 at 10th level, and 14 at 15th level.```"
       },
-      "enthralling performance": {
+      {
         "name": "Enthralling Performance",
         "description":" ```Starting at 3rd level, you can charge your performance with seductive, fey magic. \n\n If you perform for at least 1 minute, you can attempt to inspire wonder in your audience by singing, reciting a poem, or dancing. At the end of the performance, choose a number of humanoids within 60 feet of you who watched and listened to all of it, up to a number equal to your Charisma modifier (minimum of one). Each target must succeed on a Wisdom saving throw against your spell save DC or be charmed by you. While charmed in this way, the target idolizes you, it speaks glowingly of you to anyone who talks to it, and it hinders anyone who opposes you, although it avoids violence unless it was already inclined to fight on your behalf. This effect ends on a target after 1 hour, if it takes any damage, if you attack it, or if it witnesses you attacking or damaging any of its allies. \n\n If a target succeeds on its saving throw, the target has no hint that you tried to charm it. \n\n Once you use this feature, you can’t use it again until you finish a short or long rest.```"
       },
-      "mantle of majesty": {
+      {
         "name": "Mantle of Majesty",
         "description":" ```At 6th level, you gain the ability to cloak yourself in a fey magic that makes others want to serve you. As a bonus action, you cast command, without expending a spell slot, and you take on an appearance of unearthly beauty for 1 minute or until your concentration ends (as if you were concentrating on a spell). During this time, you can cast command as a bonus action on each of your turns, without expending a spell slot. \n\n Any creature charmed by you automatically fails its saving throw against the command you cast with this feature. \n\n Once you use this feature, you can’t use it again until you finish a long rest.```"
       },
-      "unbreakable majesty": {
+      {
         "name": "Unbreakable Majesty",
         "description":" ```At 14th level, your appearance permanently gains an otherworldly aspect that makes you look more lovely and fierce. \n\n In addition, as a bonus action, you can assume a magically majestic presence for 1 minute or until you are incapacitated. For the duration, whenever any creature tries to attack you for the first time on a turn, the attacker must make a Charisma saving throw against your spell save DC. On a failed save, it can’t attack you on this turn, and it must choose a new target for its attack or the attack is wasted. On a successful save, it can attack you on this turn, but it has disadvantage on any saving throw it makes against your spells on your next turn.\n\n Once you assume this majestic presence, you can’t do so again until you finish a short or long rest.```"
       }
-    }
+    ]
   },
   "college of lore": {
     "name": "College of Lore",
     "description":" ```Bards of the College of Lore know something about most things, collecting bits of knowledge from sources as diverse as scholarly tomes and peasant tales. Whether singing folk ballads in taverns or elaborate compositions in royal courts, these bards use their gifts to hold audiences spellbound. When the applause dies down, the audience members might find themselves questioning everything they held to be true, from their faith in the priesthood of the local temple to their loyalty to the king. \n\n The loyalty of these bards lies in the pursuit of beauty and truth, not in fealty to a monarch or following the tenets of a deity. A noble who keeps such a bard as a herald or advisor knows that the bard would rather be honest than politic. \n\n The college’s members gather in libraries and sometimes in actual colleges, complete with classrooms and dormitories, to share their lore with one another. They also meet at festivals or affairs of state, where they can expose corruption, unravel lies, and poke fun at self-important figures of authority.```",
-    "features": {
-      "bonus proficiencies": {
+    "features": [
+      {
         "name": "Bonus Proficiencies",
         "description":" ```When you join the College of Lore at 3rd level, you gain proficiency with three skills of your choice.```"
       },
-      "cutting words": {
+      {
         "name": "Cutting Words",
         "description":" ```Also at 3rd level, you learn how to use your wit to distract, confuse, and otherwise sap the confidence and competence of others. When a creature that you can see within 60 feet of you makes an attack roll, an ability check, or a damage roll, you can use your reaction to expend one of your uses of Bardic Inspiration, rolling a Bardic Inspiration die and subtracting the number rolled from the creature’s roll. You can choose to use this feature after the creature makes its roll, but before the DM determines whether the attack roll or ability check succeeds or fails, or before the creature deals its damage. The creature is immune if it can’t hear you or if it’s immune to being charmed.```"
       },
-      "additional magical secrets": {
+      {
         "name": "Additional Magical Secrets",
         "description":" ```At 6th level, you learn two spells of your choice from any class. A spell you choose must be of a level you can cast, as shown on the Bard table, or a cantrip. The chosen spells count as bard spells for you but don’t count against the number of bard spells you know.```"
       },
-      "peerless skill": {
+      {
         "name": "Peerless Skill",
         "description":" ```Starting at 14th level, when you make an ability check, you can expend one use of Bardic Inspiration. Roll a Bardic Inspiration die and add the number rolled to your ability check. You can choose to do so after you roll the die for the ability check, but before the DM tells you whether you succeed or fail.```"
       }
-    }
+    ]
   },
   "college of swords": {
     "name": "College of Swords",
