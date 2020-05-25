@@ -1,6 +1,6 @@
 require('dotenv').config();
 const mongoose = require("mongoose")
-const connectDB = require("../connectDB")
+const connectDB = require("./connectDB")
 const database = "dndbot";
 connectDB("mongodb://localhost:27017/"+database)
 const Discord = require('discord.js');
