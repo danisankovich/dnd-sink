@@ -15,6 +15,7 @@ const { createPlaylist, playPlaylist, addSongToPlaylist, removeSongFromPlaylist,
 const { findConditionByName } = require('./utils/conditions');
 const { rollStatsd20, rollStats3d6, rollStats4d6DropLowest, rollStats4d6DropLowestForgiving } = require('./utils/stat-generator');
 const generateNPC = require('./utils/generate-npc');
+const classLookup = require('./utils/class-lookup');
 client.login(TOKEN);
 
 client.on('ready', () => {
@@ -137,6 +138,12 @@ client.on('message', msg => {
   }
   if (msg.content.startsWith('!generate')) {
     return msg.channel.send(`${generateNPC(msg)}`);
+  }
+  if (msg.content.startsWith('!barbarian')) {
+    return classLookup('barbarian', msg);
+  }
+  if (msg.content.startsWith('!bard')) {
+    return classLookup('bard', msg);
   }
   if (msg.content.startsWith('!help')) {
     return msg.channel.send(`List of commands can be found here: https://danisankovich.github.io/dnd-sink/`);
