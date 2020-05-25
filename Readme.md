@@ -1,5 +1,3 @@
-# DND-Sink
-
 DND-Sink provides functionality useful for running and participating in a DND campaign.
 
 Functionality includes music capabilities, dice rolling, stat generation, spell lookup, and condition lookup.
@@ -20,6 +18,7 @@ DND-Sink also comes with a dynamic dice roller and an included stat generator fo
 
 * **!help** --> displays a link to the readme documentation for this bot.
 * **!feedback \<CONTENT\>** --> Sends CONTENT as feedback to the bot owner. Maximum 250 characters.
+
 ## Music Commands
 To use these commands you must be connected to a voice channel that the bot has access to.
 
@@ -70,6 +69,17 @@ ex.
  - **!spell heal**
 
 The bot currently supports all spells up to Explorer's Guide to Wildemount (EGW will be coming in a future release)
+
+## Class Feature Lookup
+
+You can look up information regarding each of the DND 5E class features
+* **!\<CLASSNAME\> \<FEATURE\>** --> provides information on the supplied feature for the given class
+
+ex.
+* **!barbarian rage**
+* **!bard college of lore**
+
+(implemented: barbarian, bard)
 
 ## Condition Lookup
 
