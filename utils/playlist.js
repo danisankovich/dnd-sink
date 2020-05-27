@@ -58,7 +58,7 @@ async function addSongToPlaylist(message) {
       if (err) {
         throw err;
       }
-      message.reply('Songs Added');
+      message.reply(`${title} added to playist "${findPlaylist.name}"`);
     });
   });
 }

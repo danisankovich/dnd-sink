@@ -28,7 +28,9 @@ const state = {}
 client.on('message', msg => {
   const serverQueue = queue.get(msg.guild.id);
   if (msg.content.startsWith('!play')) {
-      return getMusic(msg, serverQueue, queue, state, client);
+      return getMusic(msg, serverQueue, queue, state, client).then().catch(err => {
+        console.error(`${new Date()} ${err}`);
+      });
   }
   if (msg.content.startsWith('!start')) {
       return playPlaylist(msg, serverQueue, queue, state, client);
@@ -145,6 +147,9 @@ client.on('message', msg => {
   if (msg.content.startsWith('!bard')) {
     return classLookup('bard', msg);
   }
+  if (msg.content.startsWith('!blood hunter')) {
+    return classLookup('blood-hunter', msg);
+  }
   if (msg.content.startsWith('!help')) {
     return msg.channel.send(`List of commands can be found here: https://danisankovich.github.io/dnd-sink/`);
   }
@@ -155,6 +160,8 @@ client.on('message', msg => {
     }
     feedback(content).then(e => {
       return msg.reply('Feedback sent. Thank you for your input.');
+    }).catch(err => {
+      console.err(`${new Date()} ${err}`)
     })
   }
 });
