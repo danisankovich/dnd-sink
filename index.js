@@ -164,4 +164,9 @@ client.on('message', msg => {
       console.err(`${new Date()} ${err}`)
     })
   }
+  if (msg.content.startsWith('!test')) {
+    const embed = new Discord.MessageEmbed();
+    embed.setDescription('**Tester**');
+    return msg.channel.send(embed);
+  }
 });

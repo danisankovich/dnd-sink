@@ -1,3 +1,5 @@
+const Discord = require('discord.js');
+
 const classes = {
   barbarian: require('../resources/classes/barbarian.json'),
   bard: require('../resources/classes/bard.json'),
@@ -5,6 +7,7 @@ const classes = {
 }
 
 function classLookup(className, msg) {
+  const embed = new Discord.MessageEmbed();
   let searchTerm = msg.content.substr(msg.content.indexOf(' ')+1);
   if (className.includes('-')) {
     searchTerm = msg.content.split(' ');
@@ -26,10 +29,14 @@ function classLookup(className, msg) {
   }
   let returnStrings = [];
   if (feature) {
-    msg.channel.send(`**${feature.name}** ${feature.description}`);
+    embed.setDescription(`**${feature.name}**\n\n${feature.description}`)
+    msg.channel.send(embed);
     if (feature.features) {
       feature.features.forEach(e => {
-        msg.channel.send(`**${e.name}** ${e.description}`);
+        const innerEmbed = new Discord.MessageEmbed();
+        innerEmbed.setDescription(`**${e.name}**\n\n${e.description}`)
+
+        msg.channel.send(innerEmbed);
       })
     }
   } else {
