@@ -81,6 +81,8 @@ ex.
 
 (implemented: barbarian, bard)
 
+To look up features of a subclass, search for the subclass as the feature
+
 ## Condition Lookup
 
 You can look up information regarding each of the DND 5E conditions

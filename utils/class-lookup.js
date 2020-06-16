@@ -4,6 +4,7 @@ const classes = {
   barbarian: require('../resources/classes/barbarian.json'),
   bard: require('../resources/classes/bard.json'),
   'blood-hunter': require('../resources/classes/blood-hunter.json'),
+  'cleric': require('../resources/classes/cleric.json'),
 }
 
 function classLookup(className, msg) {
