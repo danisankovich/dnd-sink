@@ -41,7 +41,7 @@ function classLookup(className, msg) {
       })
     }
   } else {
-    console.log(className, searchTerm)
+    msg.channel.send(`Feature: "${searchTerm}" not found for "${className}." If you are searching for a subclass feature, search for the subclass`);
   }
 }
 
