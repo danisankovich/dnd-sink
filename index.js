@@ -25,15 +25,36 @@ client.on('ready', () => {
 const queue = new Map();
 const state = {}
 
+const timer = 1000 * 60 * 60;
+
+function timeoutChecker(msg, serverQueue, voiceChannel) {
+  state[msg.guild.id].timeoutHandle = state[msg.guild.id].timeoutHandle;
+  state[msg.guild.id].voiceChannel = voiceChannel || serverQueue.voiceChannel;
+  clearTimeout(state[msg.guild.id].timeoutHandle);
+  state[msg.guild.id].timeoutHandle = undefined;
+  state[msg.guild.id].timeoutHandle = setTimeout(() => {
+    state[msg.guild.id].voiceChannel.leave();
+    msg.channel.send('DND-Sink left voice channel after 1 hour of inactivity.')
+  }, timer); // disconnect on an hour
+}
+
 client.on('message', msg => {
   const serverQueue = queue.get(msg.guild.id);
+  state[msg.guild.id] = state[msg.guild.id] || {};
+
   if (msg.content.startsWith('!play')) {
-      return getMusic(msg, serverQueue, queue, state, client).then().catch(err => {
+    // }, 60000 * 60); // disconnect on an hour
+      return getMusic(msg, serverQueue, queue, state, client).then((voiceChannel) => {
+        timeoutChecker(msg, serverQueue, voiceChannel)
+      }).catch(err => {
         console.error(`${new Date()} ${err}`);
       });
   }
   if (msg.content.startsWith('!start')) {
-      return playPlaylist(msg, serverQueue, queue, state, client);
+
+      return playPlaylist(msg, serverQueue, queue, state, client).then(voiceChannel => {
+        timeoutChecker(msg, serverQueue, voiceChannel)
+      });
   }
   if (msg.content.startsWith('!addsong')) {
       return addSongToPlaylist(msg);
@@ -57,12 +78,14 @@ client.on('message', msg => {
     if (!serverQueue) {
       return msg.channel.send(`Music must be in the queue to use this command`);
     }
+    timeoutChecker(msg, serverQueue)
     next(serverQueue, msg.guild, queue, state);
   }
   if (msg.content.startsWith('!restart')) {
     if (!serverQueue) {
       return msg.channel.send(`Music must be in the queue to use this command`);
     }
+    timeoutChecker(msg, serverQueue)
     play(msg.guild, serverQueue.songs[0], queue, state);
     return msg.channel.send(`Restarting current song`);
   }
@@ -70,6 +93,10 @@ client.on('message', msg => {
     if (!serverQueue) {
       return msg.channel.send(`Music must be in the queue to use this command`);
     }
+    state[msg.guild.id].timeoutHandle = state[msg.guild.id].timeoutHandle;
+    state[msg.guild.id].voiceChannel = serverQueue.voiceChannel;
+    clearTimeout(state[msg.guild.id].timeoutHandle);
+    state[msg.guild.id].timeoutHandle = undefined;
     stop(serverQueue);
     return msg.channel.send(`Stopping music stream`);
   }
@@ -79,6 +106,8 @@ client.on('message', msg => {
     }
     state[msg.guild.id] = state[msg.guild.id] || {};
     state[msg.guild.id].loopSong = !state[msg.guild.id].loopSong;
+
+    timeoutChecker(msg, serverQueue)
     return msg.channel.send(`Looping is now turned ${state[msg.guild.id].loopSong ? 'On' : 'Off'} for the current song`);
   }
   if (msg.content.startsWith('!loop')) {
@@ -87,12 +116,17 @@ client.on('message', msg => {
     }
     state[msg.guild.id] = state[msg.guild.id] || {};
     state[msg.guild.id].loop = !state[msg.guild.id].loop;
+
+    timeoutChecker(msg, serverQueue)
     return msg.channel.send(`Looping is now turned ${state[msg.guild.id].loop ? 'On' : 'Off'} for the queue`);
   }
   if (msg.content.startsWith('!queue')) {
     if (!serverQueue) {
       return msg.channel.send(`Music must be in the queue to use this command`);
     }
+
+    timeoutChecker(msg, serverQueue)
+
     const songString = serverQueue.songs.map((song, i) => `${i + 1}) ${song.title}`).join('\n')
     return msg.channel.send(`\`\`\`| Queue:\n${songString}\`\`\``);
   }
@@ -100,6 +134,9 @@ client.on('message', msg => {
     if (!serverQueue) {
       return msg.channel.send(`Music must be in the queue to use this command`);
     }
+
+    timeoutChecker(msg, serverQueue)
+
     return remove(msg, serverQueue, queue, state)
   }
   if (msg.content.startsWith('!clear')) {
@@ -107,6 +144,9 @@ client.on('message', msg => {
       return msg.channel.send(`Music must be in the queue to use this command`);
     }
     serverQueue.songs = [];
+
+    timeoutChecker(msg, serverQueue)
+
     return msg.channel.send(`Queue has been cleared`);
   }
   if (msg.content.startsWith('!roll')) {
@@ -168,8 +208,6 @@ client.on('message', msg => {
     })
   }
   if (msg.content.startsWith('!test')) {
-    const embed = new Discord.MessageEmbed();
-    embed.setDescription('**Tester**');
-    return msg.channel.send(embed);
+    console.log(msg, client.user.id)
   }
 });

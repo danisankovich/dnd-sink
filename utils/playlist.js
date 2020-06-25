@@ -99,6 +99,7 @@ async function playPlaylist(message, serverQueue, queue, state, client) {
         queueConstruct.connection = connection;
         play(message.guild, queueConstruct.songs[0], queue, state);
         message.reply(`Playing ${playlistName}`);
+        return voiceChannel;
       } catch (e) {
         queue.delete(message.guild.id);
         return message.channel.send(`Error: ${e.message}`);

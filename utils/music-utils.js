@@ -10,11 +10,13 @@ function next(serverQueue, guild, queue, state) {
       serverQueue.songs.shift();
     }
   }
+
   play(guild, serverQueue.songs[0], queue, state);
 }
 
 function play(guild, song, queue, state) {
   const serverQueue = queue.get(guild.id);
+
   if (!song) {
     serverQueue.voiceChannel.leave();
     queue.delete(guild.id);
@@ -29,7 +31,7 @@ function play(guild, song, queue, state) {
     .on("error", error => console.error(error));
   dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
   if (!state[guild.id] || !state[guild.id].loopSong) {
-    serverQueue.textChannel.send(`Start playing: **${song.title}**`);
+    return serverQueue.textChannel.send(`Start playing: **${song.title}**`);
   }
 }
 
@@ -66,14 +68,15 @@ async function getMusic(message, serverQueue, queue, state, client) {
       const connection = await voiceChannel.join();
       console.log("Successfully connected.");
       queueConstruct.connection = connection;
-      play(message.guild, queueConstruct.songs[0], queue, state);
+      return play(message.guild, queueConstruct.songs[0], queue, state);
     } catch (e) {
       queue.delete(message.guild.id);
       return message.channel.send(`Error: ${e.message}`);
     }
   } else {
     serverQueue.songs.push(song);
-    return message.channel.send(`${song.title} has been added to the queue!`);
+    message.channel.send(`${song.title} has been added to the queue!`);
+    return voiceChannel;
   }
 }
 
