@@ -32,12 +32,12 @@ function timeoutChecker(msg, serverQueue, voiceChannel) {
   state[msg.guild.id].voiceChannel = voiceChannel || serverQueue.voiceChannel;
   clearTimeout(state[msg.guild.id].timeoutHandle);
   state[msg.guild.id].timeoutHandle = undefined;
-  if (state[msg.guild.id].voiceChannel) {
-    state[msg.guild.id].timeoutHandle = setTimeout(() => {
+  state[msg.guild.id].timeoutHandle = setTimeout(() => {
+    if (state[msg.guild.id].voiceChannel) {
       state[msg.guild.id].voiceChannel.leave();
       msg.channel.send('DND-Sink left voice channel after 1 hour of inactivity.')
-    }, timer); // disconnect on an hour
-  }
+    }
+  }, timer); // disconnect on an hour
 }
 
 client.on('message', msg => {
