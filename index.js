@@ -25,7 +25,7 @@ client.on('ready', () => {
 const queue = new Map();
 const state = {}
 
-const timer = 1000 * 60 * 60;
+const timer = 1000 * 60 * 60 * 2;
 
 function timeoutChecker(msg, serverQueue, voiceChannel) {
   state[msg.guild.id].timeoutHandle = state[msg.guild.id].timeoutHandle;
