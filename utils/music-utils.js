@@ -59,7 +59,7 @@ async function getMusic(message, serverQueue, queue, state, client) {
       voiceChannel,
       connection: null,
       songs: [],
-      volume: 1,
+      volume: 5,
       playing: true
     }
     queue.set(message.guild.id, queueConstruct)
