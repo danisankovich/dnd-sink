@@ -29,7 +29,7 @@ function play(guild, song, queue, state) {
       next(serverQueue, guild, queue, state);
     })
     .on("error", error => console.error(error));
-  dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
+  dispatcher.setVolumeLogarithmic(serverQueue.volume / 50);
   if (!state[guild.id] || !state[guild.id].loopSong) {
     return serverQueue.textChannel.send(`Start playing: **${song.title}**`);
   }
