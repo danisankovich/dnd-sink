@@ -186,6 +186,10 @@ async function removeSongFromPlaylist(message) {
 function displayPlaylists(message) {
   const userId = message.author.id;
   Users.findOne({userId}, (err, user) => {
+    if (!user || user.playlists.length === 0) {
+      message.reply('You have no playlists in your collection');
+      return;
+    }
     const playlistNames = user.playlists.map((p, i) => `\n | ${i + 1}) ${p.name}`);
     message.reply(playlistNames.join('\n'))
   });
@@ -196,6 +200,10 @@ function displayPlaylistSongs(message) {
 
   const userId = message.author.id;
   Users.findOne({userId}, (err, user) => {
+    if (!user || user.playlists.length === 0) {
+      message.reply('You have no playlists in your collection');
+      return;
+    }
     const playlist = user.playlists.find(p => p.name === playlistName);
     if (!playlist) {
       return message.reply(`You do not have any playlists by the name of ${playlistName} in your collection`);
@@ -213,6 +221,10 @@ function deletePlaylist(message) {
 
   const userId = message.author.id;
   Users.findOne({userId}, (err, user) => {
+    if (!user || user.playlists.length === 0) {
+      message.reply('You have no playlists in your collection');
+      return;
+    }
     const playlistIndex = user.playlists.findIndex(p => p.name === playlistName);
     if (playlistIndex === -1) {
       return message.reply(`You do not have any playlists by the name of ${playlistName} in your collection`);
