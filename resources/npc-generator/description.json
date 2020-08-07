@@ -1,0 +1,38 @@
+{
+  "eyes": {
+    "1": "Brown",
+    "45": "Blue",
+    "65": "Hazel",
+    "75": "Amber",
+    "85": "Green",
+    "90": "Yellow",
+    "93": "Red",
+    "96": "Grey",
+    "99": "Purple"
+  },
+  "scars": {
+    "1": "no visible scars",
+    "65": "a thin scar across their cheek",
+    "70": "a few scars on their hands",
+    "85": "a scar over their eye",
+    "88": "a deep scar running down the side of their neck",
+    "89": "a thin scar on their chin",
+    "95": "scars running up the length of their arms",
+    "99": "scars on the corner of their lips, curving up like a smile",
+    "99": "scars all across their face and neck",
+    "100": "scars all over their body"
+  },
+  "noteable": [
+    "1": "Large ears",
+    "11": "Big, toothy grin",
+    "21": "Several missing teeth",
+    "26": "A few missing fingers",
+    "30": "A missing leg",
+    "32": "A missing arm".
+    "34": "Walks with a limp",
+    "44": "Moves around in a wheelchair",
+    "47": "Walks with a cane",
+    "53": "Extremely Dirty",
+    "58": ""
+  ]
+}

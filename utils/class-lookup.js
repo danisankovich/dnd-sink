@@ -1,10 +1,12 @@
 const Discord = require('discord.js');
+var stringSimilarity = require('string-similarity');
 
 const classes = {
   barbarian: require('../resources/classes/barbarian.json'),
   bard: require('../resources/classes/bard.json'),
   'blood-hunter': require('../resources/classes/blood-hunter.json'),
-  'cleric': require('../resources/classes/cleric.json'),
+  cleric: require('../resources/classes/cleric.json'),
+  wizard: require('../resources/classes/wizard.json'),
 }
 
 function classLookup(className, msg) {
@@ -25,7 +27,13 @@ function classLookup(className, msg) {
   let feature = chosen[searchTerm.toLowerCase()];
   if (!feature) {
     const keys = Object.keys(chosen);
-    const key = keys.find(k => k.toLowerCase().includes(searchTerm.toLowerCase()));
+    const { ratings } = stringSimilarity.findBestMatch(searchTerm, keys);
+    const bestmatch = ratings.reduce((max, next) => max.rating > next.rating ? max : next);
+    if (!bestmatch) {
+      return msg.channel.send('No valid matches found for provided search term');
+    }
+    const key = bestmatch.target;
+
     feature = chosen[key];
   }
   let returnStrings = [];

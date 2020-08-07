@@ -4,6 +4,7 @@ const levels = require('../resources/npc-generator/levels.json');
 const names = require('../resources/npc-generator/names.json');
 const races = require('../resources/npc-generator/races.json');
 const alignments = require('../resources/npc-generator/alignment.json');
+const personalities = require('../resources/npc-generator/personalities.json');
 
 function generateNPC(msg) {
   const raceName = msg.content.substr(msg.content.indexOf(' ')+1).toLowerCase();
@@ -11,7 +12,8 @@ function generateNPC(msg) {
     gender: ['m', 'f'][Math.floor(Math.random() * 2)],
     background: backgrounds[Math.floor(Math.random() * backgrounds.length)],
     class: Math.round(Math.random()) === 0 ? 'None' : classes[Math.floor(Math.random() * classes.length)],
-    alignment: alignments[Math.floor(Math.random() * alignments.length)]
+    alignment: alignments[Math.floor(Math.random() * alignments.length)],
+    personality: personalities[Math.floor(Math.random() * personalities.length)]
   };
   let race = races.find(r => r.race === raceName);
   if (!race) {
@@ -44,7 +46,9 @@ function generateNPC(msg) {
     Weight: ${character.weight}
     Class: ${character.class}
     Level: ${character.class === 'None' ? 1 : character.level}
-    Background: ${character.background}\`\`\``;
+    Background: ${character.background}
+    Defining Trait: ${character.personality}
+    \`\`\``;
 
   return characterString;
 }

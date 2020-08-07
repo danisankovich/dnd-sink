@@ -36,7 +36,7 @@ function timeoutChecker(msg, serverQueue, voiceChannel) {
     state[msg.guild.id].timeoutHandle = setTimeout(() => {
       if (state[msg.guild.id].voiceChannel && typeof state[msg.guild.id].voiceChannel.leave === 'function') {
         state[msg.guild.id].voiceChannel.leave();
-        msg.channel.send('DND-Sink left voice channel after 1 hour of inactivity.')
+        msg.channel.send('DND-Sink left voice channel after 2 hours of inactivity.')
       }
     }, timer); // disconnect on an hour
   }
@@ -197,6 +197,9 @@ client.on('message', msg => {
     }
     if (msg.content.startsWith('!blood hunter')) {
       return classLookup('blood-hunter', msg);
+    }
+    if (msg.content.startsWith('!wizard')) {
+      return classLookup('wizard', msg);
     }
     if (msg.content.startsWith('!help')) {
       return msg.channel.send(`List of commands can be found here: https://danisankovich.github.io/dnd-sink/`);
