@@ -79,7 +79,7 @@ ex.
 * **!barbarian rage**
 * **!bard college of lore**
 
-(implemented: barbarian, bard, cleric, wizard)
+(implemented: barbarian, bard, cleric, monk, wizard)
 
 To look up features of a subclass, search for the subclass as the feature
 
