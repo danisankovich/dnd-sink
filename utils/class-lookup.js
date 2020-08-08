@@ -6,6 +6,7 @@ const classes = {
   bard: require('../resources/classes/bard.json'),
   'blood-hunter': require('../resources/classes/blood-hunter.json'),
   cleric: require('../resources/classes/cleric.json'),
+  monk: require('../resources/classes/monk.json'),
   wizard: require('../resources/classes/wizard.json'),
 }
 

@@ -198,6 +198,9 @@ client.on('message', msg => {
     if (msg.content.startsWith('!blood hunter')) {
       return classLookup('blood-hunter', msg);
     }
+    if (msg.content.startsWith('!monk')) {
+      return classLookup('monk', msg);
+    }
     if (msg.content.startsWith('!wizard')) {
       return classLookup('wizard', msg);
     }
