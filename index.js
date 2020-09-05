@@ -16,7 +16,23 @@ const { findConditionByName } = require('./utils/conditions');
 const { rollStatsd20, rollStats3d6, rollStats4d6DropLowest, rollStats4d6DropLowestForgiving } = require('./utils/stat-generator');
 const generateNPC = require('./utils/generate-npc');
 const classLookup = require('./utils/class-lookup');
-client.login(TOKEN);
+
+function login(retry = 0) {
+  client.login(TOKEN).then(res => {
+    console.log('logged in successfully');
+  }).catch(err => {
+    if (retry < 3) {
+      retry++;
+      login(retry);
+      console.error(new Date(), err, `Retrying (${retry})`);
+    } else {
+      console.error(new Date(), err, 'Stopping after 3 login retries')
+    }
+  });
+}
+
+login();
+
 
 client.on('ready', () => {
   console.info(`Logged in as ${client.user.tag}!`);
@@ -25,7 +41,7 @@ client.on('ready', () => {
 const queue = new Map();
 const state = {}
 
-const timer = 1000 * 60 * 60 * 2;
+const timer = 1000 * 60 * 60 * 3;
 
 function timeoutChecker(msg, serverQueue, voiceChannel) {
   if (state[msg.guild.id] && (voiceChannel || (serverQueue && serverQueue.voiceChannel))) {
@@ -36,9 +52,9 @@ function timeoutChecker(msg, serverQueue, voiceChannel) {
     state[msg.guild.id].timeoutHandle = setTimeout(() => {
       if (state[msg.guild.id].voiceChannel && typeof state[msg.guild.id].voiceChannel.leave === 'function') {
         state[msg.guild.id].voiceChannel.leave();
-        msg.channel.send('DND-Sink left voice channel after 2 hours of inactivity.')
+        msg.channel.send('DND-Sink left voice channel after 3 hours of inactivity.')
       }
-    }, timer); // disconnect on an hour
+    }, timer); // disconnect after 3 hours of inactivity
   }
 }
 
@@ -48,7 +64,6 @@ client.on('message', msg => {
     state[msg.guild.id] = state[msg.guild.id] || {};
 
     if (msg.content.startsWith('!play')) {
-      // }, 60000 * 60); // disconnect on an hour
         return getMusic(msg, serverQueue, queue, state, client).then((voiceChannel) => {
           timeoutChecker(msg, serverQueue, voiceChannel)
         }).catch(err => {
@@ -59,6 +74,8 @@ client.on('message', msg => {
 
         return playPlaylist(msg, serverQueue, queue, state, client).then(voiceChannel => {
           timeoutChecker(msg, serverQueue, voiceChannel)
+        }).catch(err => {
+          console.error(err);
         });
     }
     if (msg.content.startsWith('!addsong')) {
@@ -79,7 +96,7 @@ client.on('message', msg => {
     if (msg.content.startsWith('!showplaylists')) {
         return displayPlaylists(msg);
     }
-    if (msg.content.startsWith('!next')) {
+    if (msg.content.startsWith('!next') || msg.content.startsWith('!skip')) {
       if (!serverQueue) {
         return msg.channel.send(`Music must be in the queue to use this command`);
       }
@@ -215,12 +232,11 @@ client.on('message', msg => {
       feedback(content).then(e => {
         return msg.reply('Feedback sent. Thank you for your input.');
       }).catch(err => {
-        console.err(`${new Date()} ${err}`)
+        console.error(`${new Date()} ${err}`)
       })
     }
     if (msg.content.startsWith('!test')) {
       console.log(msg, client.user.id)
     }
   }
-
 });
