@@ -19,7 +19,7 @@
     "mongoose": "^5.9.15",
     "string-similarity": "^4.0.2",
     "yt-search": "^2.4.2",
-    "ytdl-core": "^4.0.0",
+    "ytdl-core": "^4.0.0"
   },
   "author": "Dani Sankovich",
   "license": "ISC"
