@@ -1,6 +1,5 @@
 const ytdl = require('ytdl-core');
 const ytsearch = require('yt-search');
-const { search } = require('yt-search');
 
 function next(serverQueue, guild, queue, state) {
   const { loop, loopSong } = (state[guild.id] || {});
@@ -20,6 +19,26 @@ function prev(serverQueue, guild, queue, state) {
 
   play(guild, serverQueue.songs[0], queue, state);
 }
+
+function jump(serverQueue, message, queue, state) {
+  const songNumber = message.content.substr(message.content.indexOf(' ')+1)
+  if (!songNumber || isNaN(songNumber)) {
+    return { error: `must provide a number when jumping to a song in the queue` };
+  }
+  const num = parseInt(songNumber)
+  if (num < 1 || num > queue.length - 1) {
+    return { error: `must provide a number within range of the current queue` };  
+  }
+
+  let index = num - 1;
+  while (index !== 0) {
+    serverQueue.songs.push(serverQueue.songs.shift());
+    index--;
+  }
+
+  play(message.guild, serverQueue.songs[0], queue, state);
+}
+
 
 function play(guild, song, queue, state) {
   const serverQueue = queue.get(guild.id);
@@ -117,4 +136,4 @@ function remove(msg, serverQueue, queue, state) {
   }
 }
 
-module.exports = { next, prev, play, stop, getMusic, remove }
+module.exports = { next, jump, prev, play, stop, getMusic, remove }
