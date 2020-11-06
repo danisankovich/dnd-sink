@@ -4,7 +4,7 @@ const connectDB = require("./connectDB")
 const database = "dndbot";
 connectDB("mongodb://localhost:27017/"+database)
 const Discord = require('discord.js');
-const client = new Discord.Client();
+const client = new Discord.Client({ partials: ['MESSAGE', 'CHANNEL', 'REACTION'] });;
 const TOKEN = process.env.TOKEN;
 
 const feedback = require('./utils/feedback');
@@ -16,6 +16,7 @@ const { findConditionByName } = require('./utils/conditions');
 const { rollStatsd20, rollStats3d6, rollStats4d6DropLowest, rollStats4d6DropLowestForgiving } = require('./utils/stat-generator');
 const generateNPC = require('./utils/generate-npc');
 const classLookup = require('./utils/class-lookup');
+const { assignRole } = require('./utils/roles');
 
 function login(retry = 0) {
   client.login(TOKEN).then(res => {
@@ -57,6 +58,14 @@ function timeoutChecker(msg, serverQueue, voiceChannel) {
     }, timer); // disconnect after 3 hours of inactivity
   }
 }
+
+// client.on('messageReactionAdd', (reaction, user) => {
+//   console.log('a reaction has been added');
+// });
+
+client.on('messageReactionRemove', (reaction, user) => {
+  console.log('a reaction has been removed');
+});
 
 client.on('message', msg => {
   if (msg.guild && msg.guild.id) {
@@ -236,7 +245,8 @@ client.on('message', msg => {
       })
     }
     if (msg.content.startsWith('!test')) {
-      console.log(msg, client.user.id)
+      console.log(test)
     }
   }
+
 });

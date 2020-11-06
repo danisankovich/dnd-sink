@@ -1,8 +1,3 @@
-const fs = require('fs');
-const util = require('util');
-const path = require('path');
-const ytsr = require('ytsr');
-
 const Users = require('../Users');
 
 const { play } = require('./music-utils');
@@ -34,9 +29,9 @@ async function addSongToPlaylist(message) {
     }
     let title, url;
     try {
-      const x = await ytsr(songName, { limit: 1 });
-      if (x && x.items) {
-        ({ title, link: url } = x.items[0]);
+      const searchResp = await ytsearch(songInfo)
+      if (searchResp && searchResp.all) {
+        ({url, title} = searchResp.all[0]);
       }
       if (!title || !url) {
         return message.reply(`${songName} could not be found`);

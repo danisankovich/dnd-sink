@@ -1,5 +1,5 @@
 const ytdl = require('ytdl-core');
-const ytsr = require('ytsr');
+const ytsearch = require('yt-search');
 
 function next(serverQueue, guild, queue, state) {
   const { loop, loopSong } = (state[guild.id] || {});
@@ -22,29 +22,31 @@ function play(guild, song, queue, state) {
     queue.delete(guild.id);
     return;
   }
-
-  const dispatcher = serverQueue.connection
+  try {
+    const dispatcher = serverQueue.connection
     .play(ytdl(song.url))
     .on("finish", () => {
       next(serverQueue, guild, queue, state);
     })
     .on("error", error => console.error(error));
-  dispatcher.setVolumeLogarithmic(serverQueue.volume / 40);
-  if (!state[guild.id] || !state[guild.id].loopSong) {
-    return serverQueue.textChannel.send(`Start playing: **${song.title}**`);
+    dispatcher.setVolumeLogarithmic(serverQueue.volume / 40);
+    if (!state[guild.id] || !state[guild.id].loopSong) {
+      return serverQueue.textChannel.send(`Start playing: **${song.title}**`);
+    }
+  } catch (err) {
+    console.error(err);
   }
 }
 
 async function getMusic(message, serverQueue, queue, state, client) {
   const voiceChannel = message.member.voice.channel;
   if (!voiceChannel) return message.channel.send(`You must be in a voice channel that dnd-sink can access to use this command`);
-
   const songInfo = message.content.substr(message.content.indexOf(' ')+1)
   let title, url;
   try {
-    const x = await ytsr(songInfo, { limit: 1 });
-    if (x && x.items) {
-      ({ title, link: url } = x.items[0]);
+    const searchResp = await ytsearch(songInfo)
+    if (searchResp && searchResp.all) {
+      ({url, title} = searchResp.all[0]);
     }
     if (!title || !url) {
       return message.reply(`${songName} could not be found`);
