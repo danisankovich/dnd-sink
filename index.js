@@ -10,7 +10,7 @@ const TOKEN = process.env.TOKEN;
 const feedback = require('./utils/feedback');
 const { findSpellByName } = require('./utils/spell-search');
 const rollDice = require('./utils/dice-roll');
-const { next, play, getMusic, stop, remove } = require('./utils/music-utils');
+const { next, prev, play, getMusic, stop, remove } = require('./utils/music-utils');
 const { createPlaylist, playPlaylist, addSongToPlaylist, removeSongFromPlaylist, displayPlaylists, displayPlaylistSongs, deletePlaylist } = require('./utils/playlist');
 const { findConditionByName } = require('./utils/conditions');
 const { rollStatsd20, rollStats3d6, rollStats4d6DropLowest, rollStats4d6DropLowestForgiving } = require('./utils/stat-generator');
@@ -111,6 +111,13 @@ client.on('message', msg => {
       }
       timeoutChecker(msg, serverQueue)
       next(serverQueue, msg.guild, queue, state);
+    }
+    if (msg.content.startsWith('!prev')) {
+      if (!serverQueue) {
+        return msg.channel.send(`Music must be in the queue to use this command`);
+      }
+      timeoutChecker(msg, serverQueue)
+      prev(serverQueue, msg.guild, queue, state);
     }
     if (msg.content.startsWith('!restart')) {
       if (!serverQueue) {

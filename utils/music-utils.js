@@ -1,5 +1,6 @@
 const ytdl = require('ytdl-core');
 const ytsearch = require('yt-search');
+const { search } = require('yt-search');
 
 function next(serverQueue, guild, queue, state) {
   const { loop, loopSong } = (state[guild.id] || {});
@@ -10,6 +11,12 @@ function next(serverQueue, guild, queue, state) {
       serverQueue.songs.shift();
     }
   }
+
+  play(guild, serverQueue.songs[0], queue, state);
+}
+
+function prev(serverQueue, guild, queue, state) {
+  serverQueue.songs.unshift(serverQueue.songs.pop());
 
   play(guild, serverQueue.songs[0], queue, state);
 }
@@ -44,8 +51,11 @@ async function getMusic(message, serverQueue, queue, state, client) {
   const songInfo = message.content.substr(message.content.indexOf(' ')+1)
   let title, url;
   try {
-    const searchResp = await ytsearch(songInfo)
+    let searchResp = await ytsearch(songInfo);
     if (searchResp && searchResp.all) {
+      if (!searchResp.all[0]) {
+        searchResp = await ytsearch(songInfo); // sometimes first query returns empty array
+      }
       ({url, title} = searchResp.all[0]);
     }
     if (!title || !url) {
@@ -69,6 +79,11 @@ async function getMusic(message, serverQueue, queue, state, client) {
     try {
       const connection = await voiceChannel.join();
       console.log("Successfully connected.");
+      message.channel.send(`
+      Settings: \`\`\`
+      Loop Song: ${state[message.guild.id].loopSong === 'On' ? 'On' : 'Off'}
+      Loop Queue: ${state[message.guild.id].loop === 'On' ? 'On' : 'Off'}\`\`\`
+      `)
       queueConstruct.connection = connection;
       return play(message.guild, queueConstruct.songs[0], queue, state);
     } catch (e) {
@@ -102,4 +117,4 @@ function remove(msg, serverQueue, queue, state) {
   }
 }
 
-module.exports = { next, play, stop, getMusic, remove }
+module.exports = { next, prev, play, stop, getMusic, remove }
