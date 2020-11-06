@@ -28,7 +28,9 @@ To use these commands you must be connected to a voice channel that the bot has 
  * **!clear** --> clears all songs from the queue
  * **!remove \<SONG TITLE\>** --> remove the provided song from the queue. Must match a song in the queue
  * **!restart** --> restarts the current song
- * **!next** --> plays the next song
+ * **!next** --> plays the next song in the queue
+ * **!prev** --> plays the previous song in the queue
+ * **!jump \<NUMBER\>** --> Plays the song in the queue based on supplied number
  * **!loop** --> toggles looping for the queue on and off
  * **!loopsong** --> toggles looping for the current song on and off
  * **!newplaylist \<PLAYLIST NAME\>** --> creates a playlist of \<PLAYLIST NAME\>
