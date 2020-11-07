@@ -30,7 +30,7 @@ async function addSongToPlaylist(message) {
     }
     let title, url;
     try {
-      const searchResp = await ytsearch(songInfo)
+      const searchResp = await ytsearch(songName)
       if (searchResp && searchResp.all) {
         ({url, title} = searchResp.all[0]);
       }
