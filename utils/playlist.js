@@ -1,4 +1,5 @@
 const Users = require('../Users');
+const ytsearch = require('yt-search');
 
 const { play } = require('./music-utils');
 
