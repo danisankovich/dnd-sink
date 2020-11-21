@@ -74,7 +74,7 @@ client.on('message', msg => {
 
     if (msg.content.startsWith('!play')) {
       const songInfo = msg.content.substr(msg.content.indexOf(' ')+1);
-      console.log(songInfo, songInfo.length)
+
       if (songInfo === '!play' || !songInfo || !songInfo.length) {
         return msg.reply(`A songname or youtube url must be provided`);
       }
