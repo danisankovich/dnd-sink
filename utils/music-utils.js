@@ -1,7 +1,7 @@
 const ytdl = require('ytdl-core');
 const ytsearch = require('yt-search');
 
-function next(serverQueue, guild, queue, state) {
+async function next(serverQueue, guild, queue, state) {
   const { loop, loopSong } = (state[guild.id] || {});
   if (loop && !loopSong) {
     serverQueue.songs.push(serverQueue.songs.shift());
@@ -11,16 +11,16 @@ function next(serverQueue, guild, queue, state) {
     }
   }
 
-  play(guild, serverQueue.songs[0], queue, state);
+  await play(guild, serverQueue.songs[0], queue, state);
 }
 
-function prev(serverQueue, guild, queue, state) {
+async function prev(serverQueue, guild, queue, state) {
   serverQueue.songs.unshift(serverQueue.songs.pop());
 
-  play(guild, serverQueue.songs[0], queue, state);
+  await play(guild, serverQueue.songs[0], queue, state);
 }
 
-function jump(serverQueue, message, queue, state) {
+async function jump(serverQueue, message, queue, state) {
   const songNumber = message.content.substr(message.content.indexOf(' ')+1)
   if (!songNumber || isNaN(songNumber)) {
     return { error: `must provide a number when jumping to a song in the queue` };
@@ -36,11 +36,11 @@ function jump(serverQueue, message, queue, state) {
     index--;
   }
 
-  play(message.guild, serverQueue.songs[0], queue, state);
+  await play(message.guild, serverQueue.songs[0], queue, state);
 }
 
 
-function play(guild, song, queue, state) {
+async function play(guild, song, queue, state) {
   const serverQueue = queue.get(guild.id);
 
   if (!song) {
@@ -49,8 +49,7 @@ function play(guild, song, queue, state) {
     return;
   }
   try {
-    const dispatcher = serverQueue.connection
-    .play(ytdl(song.url))
+    const dispatcher = serverQueue.connection.play(await ytdl(song.url))
     .on("finish", () => {
       next(serverQueue, guild, queue, state);
     })
@@ -105,7 +104,7 @@ async function getMusic(message, serverQueue, queue, state, client) {
       Loop Queue: ${state[message.guild.id].loop === 'On' ? 'On' : 'Off'}\`\`\`
       `)
       queueConstruct.connection = connection;
-      return play(message.guild, queueConstruct.songs[0], queue, state);
+      return await play(message.guild, queueConstruct.songs[0], queue, state);
     } catch (e) {
       queue.delete(message.guild.id);
       return message.channel.send(`Error: ${e.message}`);
@@ -122,7 +121,7 @@ function stop(serverQueue) {
   serverQueue.voiceChannel.leave();
 }
 
-function remove(msg, serverQueue, queue, state) {
+async function remove(msg, serverQueue, queue, state) {
   const removeTitle = msg.content.substr(msg.content.indexOf(' ')+1).toLowerCase();
 
   const removeIndex = serverQueue.songs.findIndex(song => song.title.toLowerCase().indexOf(removeTitle) > -1);
@@ -130,7 +129,7 @@ function remove(msg, serverQueue, queue, state) {
     msg.channel.send(`Removed '${serverQueue.songs[removeIndex].title}' from queue`);
     serverQueue.songs.splice(removeIndex, 1);
     if (removeIndex === 0) {
-      return play(msg.guild, serverQueue.songs[0], queue, state);
+      return await play(msg.guild, serverQueue.songs[0], queue, state);
     }
   } else {
     return msg.channel.send(`Title matching '${removeTitle}' not found in queue`);
