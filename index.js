@@ -63,9 +63,9 @@ function timeoutChecker(msg, serverQueue, voiceChannel) {
 //   console.log('a reaction has been added');
 // });
 
-client.on('messageReactionRemove', (reaction, user) => {
-  console.log('a reaction has been removed');
-});
+// client.on('messageReactionRemove', (reaction, user) => {
+//   console.log('a reaction has been removed');
+// });
 
 client.on('message', msg => {
   if (msg.guild && msg.guild.id) {
